@@ -16,8 +16,8 @@
  * {@link https://leetcode.com/problems/two-sum/ }
  */
 
-// Fast solution (brute force)
-export const twoSumFast = (numbers: number[], target: number) => {
+// Quick solution (brute force)
+export const twoSumQuick = (numbers: number[], target: number) => {
   // Using nested loops to find the two numbers
   for (let i = 0; i < numbers.length; i++) {
     for (let j = i + 1; j < numbers.length; j++) {
