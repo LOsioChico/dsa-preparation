@@ -1,1 +1,10 @@
+# TypeScript
 node_modules
+
+# Scala
+.metals
+**/.bsp
+**/.scala-build
+
+# Misc
+.vscode
