@@ -4,6 +4,7 @@
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
+    pkgs.gh
     pkgs.scala-cli
     pkgs.corepack_21
   ];
