@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    // Hide node generated folders
+    "**/node_modules": true,
+    
+    // Hide metals/scala generated folders
+    "**/.bsp": true,
+    "**/.metals": true,
+    "**/.scala-build": true
+  }
+}
