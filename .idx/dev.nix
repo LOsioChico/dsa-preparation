@@ -5,7 +5,6 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.scala-cli
-    pkgs.gnumake
     pkgs.corepack_21
   ];
 
