@@ -5,6 +5,3 @@ node_modules
 .metals
 .bsp
 .scala-build
-
-# Misc
-.vscode
