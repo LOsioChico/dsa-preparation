@@ -16,7 +16,7 @@
  * {@link https://leetcode.com/problems/two-sum/ }
  */
 
-// Quick solution (brute force)
+// Quick solution (brute force) - O(n^2) and O(1) space
 // Using nested loops to find the two numbers
 export const twoSumQuick = (numbers: number[], target: number) => {
   for (let i = 0; i < numbers.length; i++) {
@@ -28,7 +28,7 @@ export const twoSumQuick = (numbers: number[], target: number) => {
   }
 };
 
-// Best solution (hash table)
+// Best solution (hash table) - O(n) and O(n) space
 // Iterate and get the remaining value using the current number and the target value,
 // if exist save it with the index
 export const twoSumBest = (numbers: number[], target: number) => {

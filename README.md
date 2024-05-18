@@ -41,9 +41,9 @@ Usage: [language] [problem] [test name]
 ...
 ```
 
-| #   | Problem                                           | Difficulty | Tags                 | Languages                        | Notes                    |
-| --- | ------------------------------------------------- | ---------- | -------------------- | -------------------------------- | ------------------------ |
-| 1   | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy       | `Array` `Hash Table` | [TypeScript](typescript/two-sum) | O(N^2) -> O(N) hashtable |
+| #   | Problem                                           | Tags                 | Languages                        | Notes                                                                     |
+| --- | ------------------------------------------------- | -------------------- | -------------------------------- | ------------------------------------------------------------------------- |
+| 1   | [Two Sum](https://leetcode.com/problems/two-sum/) | `Array` `Hash Table` | [TypeScript](typescript/two-sum) | 1. Brute force O(n^2) and O(1) space<br/>2. Hash O(n) and O(n) space<br/> |
 
 <br/>
 <div align="right">
