@@ -1,27 +1,39 @@
 #! /bin/bash
 
 echo "----------------------------------------"
-echo "Leetcode Solutions - Luis Osio Chico"
-echo "Usage: [language] [problem] [test name]"
-echo "----------------------------------------"
-read command
-echo "----------------------------------------"
+echo "LeetCode Solutions - Luis Osio Chico"
 
-if [[ $command != *" "* ]]; then
-    echo "Invalid format"
-    exit 1
+if [[ $# -eq 3 ]]; then
+    language=$1
+    problem=$2
+    testName=$3
+else
+    echo "Usage: [language] [problem] [test name]"
+    echo "----------------------------------------"
+    read -r -p "Enter command: " command
+
+    IFS=' ' read -r -a array <<< "$command"
+
+    language=${array[0]}
+    problem=${array[1]}
+    testName=${array[2]}
 fi
 
-IFS=' ' read -r -a array <<< "$command"
-
-language=${array[0]}
-problem=${array[1]}
-testName=${array[2]}
+echo "----------------------------------------"
 
 case $language in
     "typescript")
-        echo "[+] Running typescript"
+        echo "[+] Running TypeScript"
         cd ./typescript
         pnpm test $problem/$testName
+        ;;
+    "scala")
+        echo "[+] Running Scala"
+        cd ./scala
+        cd ./$problem
+        scala-cli test $testName.test.scala
+        ;;
+    *)
+        echo "[-] Language not supported"
         ;;
 esac

@@ -28,16 +28,27 @@ Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https:/
 > If the problem is not in the list, please open an issue and I will add it.
 
 ```bash
-# Run the script
+# Main usage
+
+./start.sh scala two-sum solution
+----------------------------------------
+LeetCode Solutions - Luis Osio Chico
+----------------------------------------
+[+] Running Scala
+...
+```
+
+```bash
+# Alternative without args
 ./start.sh
 
 -----------------------------------------
 Leetcode Solutions - Luis Osio Chico
 Usage: [language] [problem] [test name]
 -----------------------------------------
-> typescript two-sum practice
+> Enter command: typescript two-sum practice
 -----------------------------------------
-[+] Running typescript
+[+] Running TypeScript
 ...
 ```
 
