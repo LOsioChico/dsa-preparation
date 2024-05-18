@@ -21,6 +21,31 @@ fi
 
 echo "----------------------------------------"
 
+if [[ -z $command ]]; then
+    echo "[!] Command is required (Example: typescript two-sum practice)"
+    exit 1
+fi
+
+if [[ -z $language ]]; then
+    echo "[!] Language is required (Example: typescript or ts)"
+    exit 1
+fi
+
+if [[ -z $problem ]]; then
+    echo "[!] Problem is required (Example: two-sum)"
+    exit 1
+fi
+
+if [[ -z $testName ]]; then
+    echo "[!] Test name is required (practice or solution)"
+    exit 1
+fi
+
+if [[ $testName != "practice" && $testName != "solution" ]]; then
+    echo "[!] Test name is not valid (practice or solution)"
+    exit 1
+fi
+
 case $language in
     "typescript"|"ts")
         echo "[+] Running TypeScript"
@@ -34,6 +59,6 @@ case $language in
         scala-cli test $testName.test.scala
         ;;
     *)
-        echo "[-] Language not supported"
+        echo "[!] Language not supported"
         ;;
 esac
