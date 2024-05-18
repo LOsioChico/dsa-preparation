@@ -25,7 +25,7 @@ case $language in
     "typescript")
         echo "[+] Running TypeScript"
         cd ./typescript
-        pnpm test $problem/$testName
+        pnpm test run $problem/$testName
         ;;
     "scala")
         echo "[+] Running Scala"
