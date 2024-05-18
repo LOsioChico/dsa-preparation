@@ -19,13 +19,21 @@ Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https:/
 
 ```
 
+## Languages
+
+| Language | Alias |
+| -------- | ----- |
+| TypeScript | ts |
+| Scala | sc |
+
 ## Usage
 
 > [!IMPORTANT]
-> If you get an error executing the script, please make sure this have permissions to execute. You can do it by running `chmod +x start.sh`.
+> If you get an error executing the script, please make sure this have permissions to execute.
+> You can do it by running `chmod +x start.sh`.
 
 > [!NOTE]
-> If the problem is not in the list, please open an issue and I will add it.
+> You can user the aliases instead of the full name.
 
 ```bash
 # Main usage
@@ -51,6 +59,8 @@ Usage: [language] [problem] [test name]
 [+] Running TypeScript
 ...
 ```
+
+# Problems
 
 | #   | Problem                                           | Tags                 | Languages                        | Notes                                                                     |
 | --- | ------------------------------------------------- | -------------------- | -------------------------------- | ------------------------------------------------------------------------- |
