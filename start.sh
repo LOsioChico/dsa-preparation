@@ -22,12 +22,12 @@ fi
 echo "----------------------------------------"
 
 case $language in
-    "typescript")
+    "typescript"|"ts")
         echo "[+] Running TypeScript"
         cd ./typescript
         pnpm test run $problem/$testName
         ;;
-    "scala")
+    "scala"|"sc")
         echo "[+] Running Scala"
         cd ./scala
         cd ./$problem
