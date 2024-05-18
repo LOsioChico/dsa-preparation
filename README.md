@@ -29,8 +29,8 @@ Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https:/
 
 ```bash
 # Main usage
-
 ./start.sh scala two-sum solution
+
 ----------------------------------------
 LeetCode Solutions - Luis Osio Chico
 ----------------------------------------
