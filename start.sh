@@ -21,11 +21,6 @@ fi
 
 echo "----------------------------------------"
 
-if [[ -z $command ]]; then
-    echo "[!] Command is required (Example: typescript two-sum practice)"
-    exit 1
-fi
-
 if [[ -z $language ]]; then
     echo "[!] Language is required (Example: typescript or ts)"
     exit 1
