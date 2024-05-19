@@ -19,7 +19,7 @@ import scala.collection.mutable.HashMap
   */
 
 object Solution {
-  // Quick solution (brute force) - O(n^2) and O(1) space
+  // Quick solution (brute force) - O(n^2) time and O(1) space
   // Using nested loops to find the two numbers
   def twoSumNestedLoop(numbers: List[Int], target: Int): List[Int] = {
     for (i <- numbers.indices) {
@@ -33,7 +33,7 @@ object Solution {
     List(0, 0)
   }
 
-  // Best solution (hash table) - O(n) and O(n) space
+  // Best solution (hash table) - O(n) time and O(n) space
   // Iterate and get the remaining value using the current number and the target value,
   // if exist save it with the index
   def twoSumHashMap(numbers: List[Int], target: Int): List[Int] = {
