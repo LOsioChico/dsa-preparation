@@ -7,6 +7,7 @@ import {
   ProblemStatus,
   QuestionResponse,
 } from "../utils/interface.ts";
+import Submission from "./submission.ts";
 
 class Problem {
   constructor(
@@ -89,15 +90,19 @@ class Problem {
       );
     }
 
-    return await Helper.HttpRequest({
+    const response = await Helper.HttpRequest({
       method: "POST",
-      url: `${Helper.uris.submit}/${lang}`,
+      url: Helper.uris.submit.replace("$slug", this.slug),
       body: {
-        lang: lang,
+        lang,
         question_id: this.id,
         typed_code: code,
       },
-    });
+    }).then((r) => r.json());
+
+    const submission = new Submission(response.submission_id);
+    await submission.fetchDetail();
+    return submission;
   }
 }
 export default Problem;
