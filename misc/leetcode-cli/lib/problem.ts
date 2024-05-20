@@ -27,10 +27,6 @@ class Problem {
     public content?: string
   ) {}
 
-  getSubmitUrl() {
-    return config.uri.submit.replace("$slug", this.slug);
-  }
-
   async fetchDetail() {
     const response = (await Helper.GraphQLRequest({
       query: `
