@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { twoSum } from "./practice";
+import twoSum from "./practice";
 
 describe("Practice test", () => {
   it("should return [0, 1] when the numbers are [2, 7, 11, 13] and the target is 9", () => {
