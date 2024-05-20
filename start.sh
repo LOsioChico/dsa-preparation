@@ -45,6 +45,7 @@ case $language in
     "typescript"|"ts")
         echo "[+] Running TypeScript"
         cd ./typescript
+        pnpm install
         pnpm test run $problem/$testName
         ;;
     "scala"|"sc")
