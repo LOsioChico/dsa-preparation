@@ -19,7 +19,8 @@
   * 
   * Input: nums = (3,3), target = 6
   * Output: (0,1)
-  *
+  * 
+  * Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
   ***************************************************************************
   * { @link https://leetcode.com/problems/two-sum/ }
   */
