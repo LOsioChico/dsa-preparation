@@ -2,7 +2,7 @@ export interface HttpRequestOptions {
   method?: string;
   url: string;
   referer?: string;
-  body?: string;
+  body?: string | object;
 }
 
 export interface Credit {
@@ -49,4 +49,43 @@ export interface Submission {
   title: string;
   title_slug: string;
   url: string;
+}
+
+export type ProblemDifficulty = "Easy" | "Medium" | "Hard";
+
+export type ProblemStatus = "Accepted" | "Not Accepted" | "Not Started";
+export const problemStatus: Record<string, ProblemStatus> = {
+  Accepted: "Accepted",
+  notac: "Not Accepted",
+  "Not Started": "Not Started",
+};
+
+export interface QuestionResponse {
+  question: {
+    questionId: number;
+    title: string;
+    difficulty: string;
+    likes: number;
+    dislikes: number;
+    isLiked: boolean;
+    isPaidOnly: boolean;
+    stats: string;
+    status: string;
+    content: string;
+    topicTags: {
+      name: string;
+    }[];
+    codeSnippets: {
+      lang: string;
+      langSlug: string;
+      code: string;
+    }[];
+    sampleTestCase: string;
+  };
+}
+
+export interface CodeSnippet {
+  lang: string;
+  langSlug: string;
+  code: string;
 }

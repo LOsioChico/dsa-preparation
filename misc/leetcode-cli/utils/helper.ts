@@ -21,8 +21,8 @@ class Helper {
     this.csrfToken = process.env.LEETCODE_CSRF_TOKEN || "";
   }
 
-  static async HttpRequest<T>(options: HttpRequestOptions): Promise<T> {
-    return (await fetch(options.url, {
+  static async HttpRequest(options: HttpRequestOptions): Promise<Response> {
+    return await fetch(options.url, {
       method: options.method || "GET",
       headers: {
         Cookie:
@@ -35,7 +35,7 @@ class Helper {
         "upgrade-insecure-requests": "1",
       },
       body: JSON.stringify(options.body) || null,
-    }).then((res) => res.json())) as T;
+    });
   }
 
   static async GraphQLRequest(options: GraphQLRequestOptions) {
