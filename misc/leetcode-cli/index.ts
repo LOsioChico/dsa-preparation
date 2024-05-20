@@ -21,7 +21,6 @@ const start = async () => {
   }
 
   const languages = await getLanguages();
-
   const language = (await clack.select({
     message: "Please select the language you want to use:",
     options: [
@@ -41,19 +40,19 @@ const start = async () => {
   })) as string;
 
   try {
-    const excludedFolders = [".idx", ".vscode", "misc"];
-    if (excludedFolders.some((folder) => language.includes(folder)))
-      throw Error("Excluded folder");
-
-    execSync(`cd ../.././${language}`);
+    execSync(`cd ../.././${language}`, { stdio: "ignore" });
   } catch {
-    return "Please enter a valid language: [typescript, scala, etc]";
+    return clack.outro(
+      "[!] Language not found, check the README.md or if its a error open a issue ⭐"
+    );
   }
 
   try {
-    execSync(`cd ../.././${language}/${exercise}`);
+    execSync(`cd ../.././${language}/${exercise}`, { stdio: "ignore" });
   } catch {
-    return "Exercise not found, please open a PR to add it";
+    return clack.outro(
+      "[!] Exercise not found, check the README.md or if its a error open a issue ⭐"
+    );
   }
 
   const confirm = await clack.confirm({
