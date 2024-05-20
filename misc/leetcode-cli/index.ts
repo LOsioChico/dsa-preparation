@@ -1,9 +1,12 @@
-import Leetcode from "./lib/leetcode.ts";
+import Submission from "./lib/submission.ts";
+import Helper from "./utils/helper.ts";
 
 const start = async () => {
-  const leetcode = new Leetcode();
-  const userData = await leetcode.getUserData();
-  console.log({ userData });
+  Helper.configure();
+
+  const submission = new Submission();
+  const mySubmissions = await submission.getAllMySubmissions();
+  console.log({ mySubmissions });
 };
 
 void start();

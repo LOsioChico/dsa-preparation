@@ -1,41 +1,41 @@
 import { GraphQLClient } from "graphql-request";
+import Dotenv from "dotenv";
 import config from "./config.ts";
-import Leetcode from "../lib/leetcode.ts";
-import Problem from "../lib/problem.ts";
-import Submission from "../lib/submission.ts";
 import {
-  Credit,
   GraphQLRequestOptions,
   HttpRequestOptions,
   Uris,
 } from "./interface.ts";
 
 class Helper {
-  static credit: Credit;
+  static session: string;
+  static csrfToken: string;
   static uris: Uris;
 
-  static setCredit(credit: Credit): void {
-    Helper.credit = credit;
+  static configure(): void {
+    const uris: Uris = config.uri;
+    this.uris = uris;
+
+    Dotenv.config();
+    this.session = process.env.LEETCODE_SESSION || "";
+    this.csrfToken = process.env.LEETCODE_CSRF_TOKEN || "";
   }
 
-  static setUris(uris: Uris): void {
-    Helper.uris = uris;
-  }
-
-  static async HttpRequest(options: HttpRequestOptions): Promise<Response> {
-    return await fetch(options.url, {
+  static async HttpRequest<T>(options: HttpRequestOptions): Promise<T> {
+    return (await fetch(options.url, {
       method: options.method || "GET",
       headers: {
-        Cookie: Helper.credit
-          ? `LEETCODE_SESSION=${Helper.credit.session}; csrftoken=${Helper.credit.csrfToken};`
-          : "",
-        "X-CSRFToken": Helper.credit ? Helper.credit.csrfToken : "",
+        Cookie:
+          Helper.session && Helper.csrfToken
+            ? `LEETCODE_SESSION=${Helper.session}; csrftoken=${Helper.csrfToken};`
+            : "",
+        "X-CSRFToken": Helper.csrfToken || "",
         "X-Requested-With": "XMLHttpRequest",
         Referer: options.referer || Helper.uris.base,
         "upgrade-insecure-requests": "1",
       },
       body: JSON.stringify(options.body) || null,
-    });
+    }).then((res) => res.json())) as T;
   }
 
   static async GraphQLRequest(options: GraphQLRequestOptions) {
@@ -43,20 +43,12 @@ class Helper {
       headers: {
         Origin: options.origin || Helper.uris.base,
         Referer: options.referer || Helper.uris.base,
-        Cookie: `LEETCODE_SESSION=${Helper.credit.session};csrftoken=${Helper.credit.csrfToken};`,
+        Cookie: `LEETCODE_SESSION=${Helper.session};csrftoken=${Helper.csrfToken};`,
         "X-Requested-With": "XMLHttpRequest",
-        "X-CSRFToken": Helper.credit.csrfToken,
+        "X-CSRFToken": Helper.csrfToken,
       },
     });
     return await client.request(options.query, options.variables || {});
-  }
-
-  static addGlobalUris(): void {
-    const uris: Uris = config.uri;
-    Helper.setUris(uris);
-    Leetcode.setUris(uris);
-    Problem.setUris(uris);
-    Submission.setUris(uris);
   }
 }
 

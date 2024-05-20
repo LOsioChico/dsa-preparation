@@ -1,13 +1,20 @@
-import { Uris } from "../utils/interface.ts";
+import Helper from "../utils/helper.ts";
+import { SubmissionsResponse } from "../utils/interface.ts";
 
 class Submission {
-  static uris: Uris;
-
-  static setUris(uris: Uris): void {
-    Submission.uris = uris;
-  }
-
   constructor() {}
+
+  async getAllMySubmissions({
+    page = 1,
+    perPage = 20,
+    lastKey = "",
+  } = {}): Promise<SubmissionsResponse> {
+    return await Helper.HttpRequest<SubmissionsResponse>({
+      method: "GET",
+      url: `${Helper.uris.allMySubmissions}?offset=${page * perPage}&limit=${perPage}&lastKey=${lastKey}`,
+      referer: Helper.uris.base,
+    });
+  }
 }
 
 export default Submission;
