@@ -60,11 +60,36 @@ Usage: [language] [problem] [test name]
 ...
 ```
 
-# Requirements
+## LeetCode Submit Usage
+
+First you need to create a `.env` file with the following content:
+
+- `LEETCODE_SESSION` - Your session
+- `LEETCODE_CSRF_TOKEN` - Your csrf token
+
+Then you need to go to the folder 'misc/leetcode-cli' and run the following command:
+
+```bash
+pnpm install
+pnpm start
+
+┌   LeetCode Solutions Submit - Luis Osio Chico
+│
+◇   ──────────────────────────────────────────────────────────────────────────────╮
+│                                                                                 │
+│  Thanks for using my project, if you like it, please give it a star on GitHub!  │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────╯
+│
+◆  Please select the language you want to use:
+...
+```
+
+## Requirements
 
 For the script to work, you need to have to need an bash shell and the following installed:
 
-## TypeScript
+## TypeScript And LeetCode Submit
 
 - [Node.js](https://nodejs.org/en/)
 - [pnpm](https://pnpm.io/)
