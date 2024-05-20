@@ -21,10 +21,10 @@ Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https:/
 
 ## Languages
 
-| Language | Alias |
-| -------- | ----- |
-| TypeScript | ts |
-| Scala | sc |
+| Language   | Alias |
+| ---------- | ----- |
+| TypeScript | ts    |
+| Scala      | sc    |
 
 ## Usage
 
@@ -60,10 +60,24 @@ Usage: [language] [problem] [test name]
 ...
 ```
 
+# Requirements
+
+For the script to work, you need to have to need an bash shell and the following installed:
+
+## TypeScript
+
+- [Node.js](https://nodejs.org/en/)
+- [pnpm](https://pnpm.io/)
+
+## Scala
+
+- [sbt](https://www.scala-sbt.org/)
+- [scala-cli](https://scala-cli.virtuslab.org/)
+
 # Problems
 
-| #   | Problem                                           | Tags                 | Languages                        | Notes                                                                     |
-| --- | ------------------------------------------------- | -------------------- | -------------------------------- | ------------------------------------------------------------------------- |
+| #   | Problem                                           | Tags                 | Languages                                               | Notes                                                                          |
+| --- | ------------------------------------------------- | -------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | 1   | [Two Sum](https://leetcode.com/problems/two-sum/) | `Array` `Hash Table` | [TypeScript](typescript/two-sum) [Scala](scala/two-sum) | 1. Brute force O(n^2) and O(1) space<br/>2. HashTable O(n) and O(n) space<br/> |
 
 <br/>
