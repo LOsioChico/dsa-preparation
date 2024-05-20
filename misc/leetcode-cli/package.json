@@ -24,6 +24,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "@clack/prompts": "^0.7.0",
     "graphql": "^16.8.1",
     "graphql-request": "^7.0.1"
   }
