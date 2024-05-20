@@ -15,6 +15,7 @@ export interface Uris {
   graphql: string;
   submit: string;
   allMySubmissions: string;
+  checkStatus: string;
 }
 
 export interface GraphQLRequestOptions {
@@ -92,7 +93,7 @@ export interface CodeSnippet {
 
 export interface SubmissionResponse {
   submissionDetails: {
-    runtime: number;
+    runtime: string;
     runtimeDisplay: string;
     runtimePercentile: string;
     runtimeDistribution: string;
@@ -174,3 +175,31 @@ export const submissionStatus: Record<string, SubmissionStatus> = {
   20: "Compile Error",
   30: "Timeout",
 };
+
+export interface CheckStatusResponse {
+  code_output: string;
+  compare_result: string;
+  elapsed_time: number;
+  expected_output: string;
+  finished: boolean;
+  lang: string;
+  last_testcase: string;
+  memory: number;
+  memory_percentile: number;
+  pretty_lang: string;
+  question_id: string;
+  run_success: boolean;
+  runtime_percentile: number;
+  state: CheckStatusStatus;
+  status_code: number;
+  status_memory: string;
+  status_msg: SubmissionStatus;
+  status_runtime: string;
+  std_output: string;
+  submission_id: string;
+  task_finish_time: number;
+  task_name: string;
+  total_correct: number;
+  total_testcases: number;
+}
+export type CheckStatusStatus = "PENDING" | "STARTED" | "SUCCESS";

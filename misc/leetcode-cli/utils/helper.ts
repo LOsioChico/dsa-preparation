@@ -50,6 +50,16 @@ class Helper {
     });
     return await client.request(options.query, options.variables || {});
   }
+
+  static languageToLeetCodeLang: Record<string, string> = {
+    typescript: "typescript",
+    scala: "scala",
+  };
+
+  static languageExtensions: Record<string, string> = {
+    typescript: "ts",
+    scala: "scala",
+  };
 }
 
 export default Helper;

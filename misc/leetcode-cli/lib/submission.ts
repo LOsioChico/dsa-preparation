@@ -5,6 +5,8 @@ import {
   ProblemDifficulty,
   SubmissionStatus,
   submissionStatus,
+  CheckStatusResponse,
+  CheckStatusStatus,
 } from "../utils/interface.ts";
 
 class Submission {
@@ -14,7 +16,7 @@ class Submission {
   public statusDisplay?: string;
   public lang?: string;
   public langName?: string;
-  public runtime?: number;
+  public runtime?: string;
   public timestamp?: number;
   public url?: string;
   public isPending?: boolean;
@@ -113,6 +115,16 @@ class Submission {
     this.notes = submission.notes;
     this.flagType = submission.flagType;
     this.topicTags = submission.topicTags.map((t: { name: string }) => t.name);
+  }
+
+  async checkStatus(): Promise<CheckStatusResponse> {
+    const response = await Helper.HttpRequest({
+      method: "GET",
+      url: Helper.uris.checkStatus.replace("$id", this.id.toString()),
+    }).then((r) => r.json() as Promise<CheckStatusResponse>);
+
+    if (response.state !== "SUCCESS") return await this.checkStatus();
+    else return response;
   }
 }
 

@@ -97,8 +97,9 @@ class Problem {
     }).then((r) => r.json());
 
     const submission = new Submission(response.submission_id);
+    const status = await submission.checkStatus();
     await submission.fetchDetail();
-    return submission;
+    return status;
   }
 }
 export default Problem;
