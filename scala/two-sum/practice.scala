@@ -28,6 +28,6 @@
 
 object Practice {
   def twoSum(numbers: Array[Int], target: Int): Array[Int] = {
-    return Array(0, 0)
+    Array(0, 0)
   }
 }
