@@ -27,7 +27,7 @@
   */
 
 object Practice {
-  def twoSum(numbers: List[Int], target: Int): List[Int] = {
-    List(0, 0)
+  def twoSum(numbers: Array[Int], target: Int): Array[Int] = {
+    Array(0, 0)
   }
 }

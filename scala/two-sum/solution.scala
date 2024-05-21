@@ -31,33 +31,33 @@ import scala.collection.mutable.HashMap
 object Solution {
   // Quick solution (brute force) - O(n^2) time and O(1) space
   // Using nested loops to find the two numbers
-  def twoSumNestedLoop(numbers: List[Int], target: Int): List[Int] = {
+  def twoSumNestedLoop(numbers: Array[Int], target: Int): Array[Int] = {
     for (i <- numbers.indices) {
       for (j <- Range(i, numbers.size)) {
         if (numbers(i) + numbers(j) == target) {
-          return List(i, j)
+          return Array(i, j)
         }
       }
     }
 
-    List(0, 0)
+    Array(0, 0)
   }
 
   // Best solution (hash table) - O(n) time and O(n) space
   // Iterate and get the remaining value using the current number and the target value,
   // if exist save it with the index
-  def twoSumHashMap(numbers: List[Int], target: Int): List[Int] = {
+  def twoSumHashMap(numbers: Array[Int], target: Int): Array[Int] = {
     val hashMap = new HashMap[Int, Int]()
 
     numbers.zipWithIndex.foreach { case (number, index) =>
       val remaining = target - number
 
       hashMap.get(remaining) match {
-        case Some(value) => return List(value, index)
+        case Some(value) => return Array(value, index)
         case None        => hashMap.addOne(number, index)
       }
     }
 
-    List(0, 0)
+    Array(0, 0)
   }
 }
