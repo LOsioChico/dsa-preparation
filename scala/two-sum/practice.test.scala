@@ -4,7 +4,7 @@
 
 import org.scalatest.funspec.AnyFunSpec
 
-class Tests extends AnyFunSpec {
+class PracticeTests extends AnyFunSpec {
   describe("Practice test") {
     it(
       "Should return List(0, 1) when the numbers are List(2, 7, 11, 13) and the target is 9"
