@@ -11,7 +11,7 @@ class PracticeTests extends AnyFunSpec {
     ) {
       val numbers = Array(2, 7, 11, 13);
       val target = 9;
-      assert(Practice.twoSum(numbers, target) sameElements Array(0, 1))
+      assert(Practice.twoSum(numbers, target).toList == Array(0, 1).toList)
     }
 
     it(
@@ -19,7 +19,7 @@ class PracticeTests extends AnyFunSpec {
     ) {
       val numbers = Array(13, 7, 11, 2)
       val target = 9
-      assert(Practice.twoSum(numbers, target) sameElements Array(1, 3))
+      assert(Practice.twoSum(numbers, target).toList == Array(1, 3).toList)
     }
 
     it(
@@ -27,7 +27,7 @@ class PracticeTests extends AnyFunSpec {
     ) {
       val numbers = Array(13, 11, 7, 2)
       val target = 9
-      assert(Practice.twoSum(numbers, target) sameElements Array(2, 3))
+      assert(Practice.twoSum(numbers, target).toList == Array(2, 3).toList)
     }
 
     it(
@@ -35,7 +35,7 @@ class PracticeTests extends AnyFunSpec {
     ) {
       val numbers = Array(13, 11, 7, 2)
       val target = 24
-      assert(Practice.twoSum(numbers, target) sameElements Array(0, 1))
+      assert(Practice.twoSum(numbers, target).toList == Array(0, 1).toList)
     }
 
     it(
@@ -43,7 +43,15 @@ class PracticeTests extends AnyFunSpec {
     ) {
       val numbers = Array(13, 11, 7, 2)
       val target = 15
-      assert(Practice.twoSum(numbers, target) sameElements Array(0, 3))
+      assert(Practice.twoSum(numbers, target).toList == Array(0, 3).toList)
+    }
+
+    it(
+      "Should return Array(0, 1) when the numbers are Array(3, 3) and the target is 6"
+    ) {
+      val numbers = Array(3, 3)
+      val target = 6
+      assert(Practice.twoSum(numbers, target).toList == Array(0, 1).toList)
     }
   }
 }
