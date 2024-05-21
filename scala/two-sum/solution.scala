@@ -32,15 +32,18 @@ object Solution {
   // Quick solution (brute force) - O(n^2) time and O(1) space
   // Using nested loops to find the two numbers
   def twoSumNestedLoop(numbers: Array[Int], target: Int): Array[Int] = {
+    val result = Array(0, 0)
+
     for (i <- numbers.indices) {
-      for (j <- Range(i, numbers.size)) {
+      for (j <- Range(i + 1, numbers.size)) {
         if (numbers(i) + numbers(j) == target) {
-          return Array(i, j)
+          result.update(0, i)
+          result.update(1, j)
         }
       }
     }
 
-    Array(0, 0)
+    result
   }
 
   // Best solution (hash table) - O(n) time and O(n) space
