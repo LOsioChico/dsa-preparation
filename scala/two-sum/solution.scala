@@ -1,8 +1,9 @@
+// scalafmt: { docstrings.style = keep }
 //> using scala "2.13.14"
 
 import scala.collection.mutable.HashMap
 
-/** scalafmt: { comments.style = "off"}
+/**
   * @tag Array; Hash Table
   ***************************************************************************
   * Given an array of integers, find two numbers such that they add up to a
