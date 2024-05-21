@@ -7,6 +7,7 @@
     pkgs.gh
     pkgs.scala-cli
     pkgs.corepack_21
+    pkgs.jdk17
   ];
 
   # Sets environment variables in the workspace
