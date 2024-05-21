@@ -203,3 +203,25 @@ export interface CheckStatusResponse {
   total_testcases: number;
 }
 export type CheckStatusStatus = "PENDING" | "STARTED" | "SUCCESS";
+
+export interface UserData {
+  userStatus: {
+    userId: number;
+    isSignedIn: boolean;
+    isMockUser: boolean;
+    isPremium: boolean;
+    isVerified: boolean;
+    username: string;
+    avatar: string;
+    isAdmin: boolean;
+    isSuperuser: boolean;
+    permissions: string;
+    isTranslator: boolean;
+    activeSessionId: string;
+    checkedInToday: boolean;
+    notificationStatus: {
+      lastModified: number;
+      numUnread: number;
+    };
+  };
+}

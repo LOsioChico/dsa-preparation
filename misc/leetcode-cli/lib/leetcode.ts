@@ -1,11 +1,12 @@
 import Helper from "../utils/helper.ts";
 import Dotenv from "dotenv";
+import { UserData } from "../utils/interface.ts";
 
 Dotenv.config();
 
 class Leetcode {
-  async getUserData() {
-    const response = (await Helper.GraphQLRequest({
+  static async getUserData() {
+    return (await Helper.GraphQLRequest({
       query: `
               query globalData {
                   userStatus {
@@ -29,8 +30,7 @@ class Leetcode {
                   }
               }
             `,
-    })) as { userStatus: string };
-    return response.userStatus;
+    })) as UserData;
   }
 }
 
