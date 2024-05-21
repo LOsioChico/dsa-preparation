@@ -4,6 +4,7 @@ import * as clack from "@clack/prompts";
 import Helper from "./utils/helper.ts";
 import Problem from "./lib/problem.ts";
 import { exit } from "node:process";
+import Leetcode from "./lib/leetcode.ts";
 
 const start = async () => {
   Helper.configure();
@@ -21,6 +22,9 @@ const start = async () => {
     clack.cancel("[!] Check the .env file and try again");
     exit(1);
   }
+
+  const userData = await Leetcode.getUserData();
+  clack.outro(`Welcome ${userData.userStatus.username}! 👋`);
 
   const languages = await getLanguages();
   const language = (await clack.select({
@@ -142,18 +146,18 @@ const getCodeToSubmit = async (code: string, language: string) => {
     exit(1);
   }
 
-  if (language === "scala" && code.includes("return")) {
-    clack.cancel(
-      "[!] Please don't use return in Scala, LeetCode will not accept it :("
-    );
-    exit(1);
-  }
-
   const lastBracket = code.split("*/")[1].lastIndexOf("}");
   const codeToSubmit = code
     .split("*/")[1]
     .slice(0, lastBracket + 1)
     .replace("Practice", "Solution");
+
+  if (language === "scala" && codeToSubmit.includes("return")) {
+    clack.cancel(
+      "[!] Please don't use return in Scala, LeetCode will not accept it :("
+    );
+    exit(1);
+  }
 
   return codeToSubmit;
 };
