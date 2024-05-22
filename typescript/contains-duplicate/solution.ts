@@ -17,6 +17,9 @@
  *  { @link https://leetcode.com/problems/contains-duplicate/ }
  */
 
+// [!] Not recommended to submit this one, LT will return `Time Limit Exceeded`
+// Quick solution (brute force) - O(n^2) time and O(1) space
+// Using nested loops to find the two numbers
 export const containsDuplicateNestedLoops = (numbers: number[]): boolean => {
   for (let i = 0; i < numbers.length; i++) {
     for (let j = i + 1; j < numbers.length; j++) {
