@@ -86,7 +86,7 @@ class Problem {
       );
     }
 
-    const response = await Helper.HttpRequest({
+    const response = (await Helper.HttpRequest({
       method: "POST",
       url: Helper.uris.submit.replace("$slug", this.slug),
       body: {
@@ -94,7 +94,7 @@ class Problem {
         question_id: this.id,
         typed_code: code,
       },
-    }).then((r) => r.json());
+    }).then((r) => r.json())) as { submission_id: number };
 
     const submission = new Submission(response.submission_id);
     const status = await submission.checkStatus();
