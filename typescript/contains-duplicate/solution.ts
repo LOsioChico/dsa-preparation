@@ -29,3 +29,15 @@ export const containsDuplicateNestedLoops = (numbers: number[]): boolean => {
 
   return false;
 };
+
+// Quick solution (sorting) - O(n * log(n)) time and O(n) space
+// Sorting the numbers and check the current and the previous
+export const containsDuplicateSorting = (numbers: number[]): boolean => {
+  const sortedNumbers = numbers.sort();
+
+  for (let i = 1; i < numbers.length; i++) {
+    if (sortedNumbers[i] === sortedNumbers[i - 1]) return true;
+  }
+
+  return false;
+};
