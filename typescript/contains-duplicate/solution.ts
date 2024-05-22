@@ -41,3 +41,17 @@ export const containsDuplicateSorting = (numbers: number[]): boolean => {
 
   return false;
 };
+
+// Best solution (hash table) - O(n) time and O(n) space
+// Iterate and check if the numbers is already seen, if not save
+// it with a truthy value
+export const containsDuplicateHashMap = (numbers: number[]): boolean => {
+  const seen = new Map<number, boolean>();
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (seen.has(numbers[i])) return true;
+    else seen.set(numbers[i], true);
+  }
+
+  return false;
+};
