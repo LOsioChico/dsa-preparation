@@ -23,8 +23,8 @@
  * { @link https://leetcode.com/problems/two-sum/ }
  */
 
-const twoSum = (numbers: number[], target: number) => {
-  //
+const twoSum = (numbers: number[], target: number): number[] => {
+  return [0, 0];
 };
 
 export default twoSum;
