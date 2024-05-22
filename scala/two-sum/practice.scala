@@ -1,5 +1,4 @@
-// scalafmt: { docstrings.style = keep }
-//> using scala "2.13.14"
+//> using scala "3.3.1"
 
 /** 
   * @tag Array; Hash Table

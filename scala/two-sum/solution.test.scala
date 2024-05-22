@@ -1,4 +1,4 @@
-//> using scala "2.13.14"
+//> using scala "3.3.1"
 //> using test.dep org.scalatest::scalatest::3.2.18
 //> using file solution.scala
 
