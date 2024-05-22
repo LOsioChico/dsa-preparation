@@ -116,6 +116,6 @@ For the script to work, you need to have to need an bash shell and the following
 
 <br/>
 <div align="right">
-    <b><a href="#algorithms">⬆️ Back to Top</a></b>
+    <b><a href="#introduction">⬆️ Back to Top</a></b>
 </div>
 <br/>
