@@ -5,7 +5,7 @@ This guide is based on the study plan document provided by alvaroszi, the book m
 Book: The Algorithm Design Manual by Steven S. Skiena
 
 > [!NOTE]
-> All the bullet points that have numbers like `2.2`, `2.7`, `3.1`, etc are chapters from the book.
+> All the bullet points that have numbers like `2.2`, `2.7`, `3.1`, etc are chapters from the book.<br/>
 > So `2.2` refers to chapter 2, section 2 and so on.
 
 ## Week 1
