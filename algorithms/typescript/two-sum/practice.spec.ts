@@ -2,6 +2,12 @@ import { describe, it, expect } from "vitest";
 import twoSum from "./practice";
 
 describe("Practice test", () => {
+  it("Should return [0, 3] when the numbers are [0, 4, 3, 0] and the target is 0", () => {
+    const numbers = [0, 4, 3, 0];
+    const target = 0;
+    expect(twoSum(numbers, target)).toEqual([0, 3]);
+  });
+
   it("should return [0, 1] when the numbers are [2, 7, 11, 13] and the target is 9", () => {
     const numbers = [2, 7, 11, 13];
     const target = 9;

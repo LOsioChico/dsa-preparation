@@ -7,6 +7,14 @@ import org.scalatest.funspec.AnyFunSpec
 class PracticeTests extends AnyFunSpec {
   describe("Practice test") {
     it(
+      "Should return Array(0, 3) when the numbers are Array(0, 4, 3, 0) and the target is 0"
+    ) {
+      val numbers = Array(0, 4, 3, 0);
+      val target = 0;
+      assert(Practice.twoSum(numbers, target).toList == Array(0, 3).toList)
+    }
+
+    it(
       "Should return Array(0, 1) when the numbers are Array(2, 7, 11, 13) and the target is 9"
     ) {
       val numbers = Array(2, 7, 11, 13);
