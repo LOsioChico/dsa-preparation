@@ -101,17 +101,22 @@ const start = async () => {
   submitCodeSpinner.stop();
 
   let message = `Status: ${status.status_msg} ${status.status_msg === "Accepted" ? "⭐" : " "}
-   Elapsed Time: ${status.elapsed_time} ms
-   Tests: ${status.total_correct}/${status.total_testcases}`;
+   Language: ${status.pretty_lang}`;
 
-  if (status.status_code === 10) {
-    message += `
+  switch (status.status_code) {
+    case 10:
+      message += `
+   Elapsed Time: ${status.elapsed_time} ms
+   Tests: ${status.total_correct}/${status.total_testcases}
    Runtime: ${status.status_runtime}
    Runtime Percentile: ${Math.round(status.runtime_percentile)}%
    Memory: ${status.status_memory}
    Memory Percentile: ${Math.round(status.memory_percentile)}%`;
-  } else {
-    clack.cancel(`Not Accepted :(, please try again with the test cases`);
+      break;
+    case 20:
+      message += `
+   Full Compile Error: ${status.full_compile_error?.replaceAll("\n", "\n\t\t\t")}`;
+      break;
   }
 
   clack.outro(message);

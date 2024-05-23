@@ -201,6 +201,8 @@ export interface CheckStatusResponse {
   task_name: string;
   total_correct: number;
   total_testcases: number;
+  compile_error?: string;
+  full_compile_error?: string;
 }
 export type CheckStatusStatus = "PENDING" | "STARTED" | "SUCCESS";
 
