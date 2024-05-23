@@ -26,7 +26,7 @@ const start = async () => {
   const userData = await Leetcode.getUserData();
   clack.outro(`Welcome ${userData.userStatus.username}! 👋`);
 
-  const languages = await getLanguages();
+  const languages = await getLanguagesFromReadme();
   const language = (await clack.select({
     message: "Please select the language you want to use:",
     options: [
@@ -125,7 +125,7 @@ const start = async () => {
   );
 };
 
-const getLanguages = async () => {
+const getLanguagesFromReadme = async () => {
   const readme = await fs.readFile("../../README.md", "utf-8");
   if (!readme) {
     clack.cancel("README.md not found");
