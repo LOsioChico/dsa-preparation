@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains my solutions to the problems in the LeetCode platform. I will be using TypeScript, Go, Scala and whatever language I feel like using to solve the problems.
+This repository contains solutions and practice with his suite tests for algorithms and data structures problems. I will be using TypeScript, Java, Scala and whatever language I feel like using to solve the problems.
 
 Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https://www.youtube.com/watch?v=se2FOhsBHEo)
 
