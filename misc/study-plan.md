@@ -11,6 +11,20 @@ Book: The Algorithm Design Manual by Steven S. Skiena
 ## Week 1
 
 - `2.2` - `2.7` (16 pages)
+- `3.1` (6 pages)
+- Implement a doubly Linked List clas with the following methods:
+    - Preprend
+    - Append
+    - Delete
+    - Search
+    - Get length
+    - Print list
+    - Print reversed (without using arrays, stacks or anything similar)
+- Solve the next problems:
+    - [LeetCode - Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+    - [LeetCode - Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+    - [LeetCode - Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+    - [LeetCode - Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 
 ### Credits
 
