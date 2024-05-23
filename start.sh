@@ -7,6 +7,19 @@ if [[ $# -eq 3 ]]; then
     language=$1
     problem=$2
     testName=$3
+elif [[ $# -eq 1 ]]; then
+    echo "----------------------------------------"
+    command=$1
+    if [[ $command == "submit" ]]; then
+        cd ./misc/leetcode-cli && pnpm install && pnpm start
+    else 
+        echo "[!] Wrong use of the script, the available 1 position options are:"
+        echo "- submit"
+        echo ""
+        echo "Example: ./start.sh submit"
+        echo "You typed \"$command\""
+    fi
+    exit
 else
     echo "Usage: [language] [problem] [test name]"
     echo "----------------------------------------"

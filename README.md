@@ -69,7 +69,7 @@ Usage: [language] [problem] [test name]
 
 ## LeetCode Submit Usage
 
-First you need to create a `.env` file with the following content:
+First you need to create a `.env` file on 'misc/leetcode-cli' based on the `.env.template` with the following content:
 
 - `LEETCODE_SESSION` - Your session
 - `LEETCODE_CSRF_TOKEN` - Your csrf token
@@ -77,6 +77,16 @@ First you need to create a `.env` file with the following content:
 Then you need to go to the folder 'misc/leetcode-cli' and run the following command:
 
 ```bash
+# Main usage
+./start.sh submit
+
+----------------------------------------
+DSA Preparation - Luis Osio Chico
+----------------------------------------
+...
+
+# Alternative
+cd ./misc/leetcode-cli
 pnpm install
 pnpm start
 
