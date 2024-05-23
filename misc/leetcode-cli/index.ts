@@ -100,22 +100,23 @@ const start = async () => {
   const status = await problem.submit(lang, codeToSubmit);
   submitCodeSpinner.stop();
 
-  let message = `Status: ${status.status_msg} ${status.status_msg === "Accepted" ? "⭐" : " "}
-   Language: ${status.pretty_lang}`;
+  let message = `Language: ${status.pretty_lang}
+   Status: ${status.status_msg} ${status.status_msg === "Accepted" ? "⭐" : " "}
+   Elapsed Time: ${status.elapsed_time} ms
+   Tests: ${status.total_correct}/${status.total_testcases}`;
 
   switch (status.status_code) {
     case 10:
       message += `
-   Elapsed Time: ${status.elapsed_time} ms
-   Tests: ${status.total_correct}/${status.total_testcases}
    Runtime: ${status.status_runtime}
    Runtime Percentile: ${Math.round(status.runtime_percentile)}%
    Memory: ${status.status_memory}
    Memory Percentile: ${Math.round(status.memory_percentile)}%`;
       break;
     case 20:
-      message += `
-   Full Compile Error: ${status.full_compile_error?.replaceAll("\n", "\n\t\t\t")}`;
+      message = `Language: ${status.pretty_lang}
+   Status: ${status.status_msg}
+   Code Errors: ${status.full_compile_error?.replaceAll("\n", "\n\t\t\t")}`;
       break;
   }
 
