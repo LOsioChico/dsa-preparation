@@ -25,6 +25,7 @@
       "tamasfe.even-better-toml"
       "usernamehw.errorlens"
       "WakaTime.vscode-wakatime"
+      "esbenp.prettier-vscode"
     ];
 
     # Enable previews
