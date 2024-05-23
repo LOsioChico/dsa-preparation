@@ -53,7 +53,6 @@ const start = async () => {
       if (input.length === 0) return "Please enter a valid command: [exercise]";
 
       try {
-        console.log(`cd ../../${language}/${input}`);
         execSync(`cd ../../${language}/${input}`, { stdio: "ignore" });
       } catch {
         return "[!] Exercise not found, check the README.md or if its a error open a issue ⭐";
