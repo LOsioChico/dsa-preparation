@@ -155,7 +155,9 @@ const getCodeToSubmit = async (code: string, language: string) => {
   const codeToSubmit = code
     .split("*/")[1]
     .slice(0, lastBracket + 1)
-    .replace("Practice", "Solution");
+    .replace("Practice", "Solution")
+    // remove the first two "\n" or "\r\n"
+    .replace(/^\n|\r\n/gm, "");
 
   if (language === "scala" && codeToSubmit.includes("return")) {
     clack.cancel(
@@ -164,7 +166,9 @@ const getCodeToSubmit = async (code: string, language: string) => {
     exit(1);
   }
 
-  return codeToSubmit;
+  const imports = code.split("\n").filter((line) => line.includes("import"));
+
+  return `${imports.join("\n")}\n${codeToSubmit}`;
 };
 
 const areBracketsBalanced = (code: string) => {
