@@ -44,15 +44,14 @@ fi
 case $language in
     "typescript"|"ts")
         echo "[+] Running TypeScript"
-        cd ./typescript
+        cd ./algorithms/typescript
         pnpm install
         pnpm test run $problem/$testName
         ;;
     "scala"|"sc")
         echo "[+] Running Scala"
-        cd ./scala
-        cd ./$problem
-        scala-cli test $testName.test.scala
+        cd ./algorithms/scala
+        scala-cli test $problem/$testName.test.scala
         ;;
     *)
         echo "[!] Language not supported"

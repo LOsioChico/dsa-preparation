@@ -8,14 +8,21 @@ Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https:/
 
 ```plain
   root
-    |--- [language]   // language specific solutions
-    |     |-- two-sum // problem name
-    |     |         |-- practice.[ext]      // code skeleton
-    |     |         |-- practice.[testExt]  // practice test
-    |     |         |-- solution.[ext]      // solution
-    |     |         |-- solution.[testExt]  // solution test
+    |--- algorithms
+    |     |-- [language]   // language (typescript, scala, etc)
+    |     |     |-- [problemName] // problem name (two-sum, contains-duplicate, etc)
+    |     |     |         |-- practice.[ext]      // code skeleton
+    |     |     |         |-- practice.[testExt]  // practice test
+    |     |     |         |-- solution.[ext]      // solution
+    |     |     |         |-- solution.[testExt]  // solution test
+    |     |-- ......
+    |-- misc
+    |     |-- leetcode-cli // submit to leetcode program
+    |     |-- books
     |     |-- ......
     |-- road.md       // general things I learnt through the process
+    |-- README.md     // this file
+    |-- ......
 
 ```
 

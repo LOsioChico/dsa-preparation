@@ -11,7 +11,7 @@ const start = async () => {
 
   clack.intro(
     "\x1b[46m\x1b[30m" +
-      " DSA Preparation Submit - Luis Osio Chico " +
+      " LeetCode Solutions Submit - Luis Osio Chico " +
       "\x1b[0m"
   );
   clack.note(
@@ -38,7 +38,7 @@ const start = async () => {
   })) as string;
 
   try {
-    execSync(`cd ../../${language}`, { stdio: "ignore" });
+    execSync(`cd ../../algorithms/${language}`, { stdio: "ignore" });
   } catch {
     clack.cancel(
       "[!] Language not found, check the README.md or if its a error open a issue ⭐"
@@ -53,7 +53,7 @@ const start = async () => {
       if (input.length === 0) return "Please enter a valid command: [exercise]";
 
       try {
-        execSync(`cd ../../${language}/${input}`, { stdio: "ignore" });
+        execSync(`cd ../../algorithms/${language}/${input}`, { stdio: "ignore" });
       } catch {
         return "[!] Exercise not found, check the README.md or if its a error open a issue ⭐";
       }
@@ -90,7 +90,7 @@ const start = async () => {
 
   submitCodeSpinner.start("Submitting code...");
   const code = await fs.readFile(
-    `../../${language}/${exercise}/practice.${Helper.languageExtensions[language]}`,
+    `../../algorithms/${language}/${exercise}/practice.${Helper.languageExtensions[language]}`,
     "utf-8"
   );
   const codeToSubmit = await getCodeToSubmit(code, language);
