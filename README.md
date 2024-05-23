@@ -40,7 +40,7 @@ Inspirational video (spanish): [Como estudiar LeetCode para Entrevistas](https:/
 ./start.sh scala two-sum solution
 
 ----------------------------------------
-LeetCode Solutions - Luis Osio Chico
+DSA Preparation - Luis Osio Chico
 ----------------------------------------
 [+] Running Scala
 ...
@@ -51,7 +51,7 @@ LeetCode Solutions - Luis Osio Chico
 ./start.sh
 
 -----------------------------------------
-Leetcode Solutions - Luis Osio Chico
+DSA Preparation - Luis Osio Chico
 Usage: [language] [problem] [test name]
 -----------------------------------------
 > Enter command: typescript two-sum practice
@@ -73,7 +73,7 @@ Then you need to go to the folder 'misc/leetcode-cli' and run the following comm
 pnpm install
 pnpm start
 
-┌   LeetCode Solutions Submit - Luis Osio Chico
+┌   DSA Preparation Submit - Luis Osio Chico
 │
 ◇   ────────────────────────────────────────────────────────────────────────────────╮
 │                                                                                   │
@@ -109,10 +109,10 @@ For the script to work, you need to have to need an bash shell and the following
 > [!NOTE]
 > The [!!] on the `Notes` means not recommended to submit
 
-| #   | Problem                                           | Tags                 | Languages                                               | Notes                                                                          |
-| --- | ------------------------------------------------- | -------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 1   | [Two Sum](https://leetcode.com/problems/two-sum/) | `Array` `Hash Table` | [TypeScript](typescript/two-sum) [Scala](scala/two-sum) | 1. Brute force O(n^2) and O(1) space<br/>2. HashTable O(n) time and O(n) space<br/> |
-| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | `Array` `Hash Table` `Sorting` | [TypeScript](typescript/contains-duplicate) | 1. [!!] Brute force O(n^2) and O(1) space<br/>2. Sorting O(n * log(n)) time and O(n) space<br/>3. HashTable O(n) time and O(n) space |
+| #   | Problem                                                                 | Tags                           | Languages                                               | Notes                                                                                                                                 |
+| --- | ----------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Two Sum](https://leetcode.com/problems/two-sum/)                       | `Array` `Hash Table`           | [TypeScript](typescript/two-sum) [Scala](scala/two-sum) | 1. Brute force O(n^2) and O(1) space<br/>2. HashTable O(n) time and O(n) space<br/>                                                   |
+| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | `Array` `Hash Table` `Sorting` | [TypeScript](typescript/contains-duplicate)             | 1. [!!] Brute force O(n^2) and O(1) space<br/>2. Sorting O(n \* log(n)) time and O(n) space<br/>3. HashTable O(n) time and O(n) space |
 
 <br/>
 <div align="right">

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo "----------------------------------------"
-echo "LeetCode Solutions - Luis Osio Chico"
+echo "DSA Preparation - Luis Osio Chico"
 
 if [[ $# -eq 3 ]]; then
     language=$1

@@ -11,7 +11,7 @@ const start = async () => {
 
   clack.intro(
     "\x1b[46m\x1b[30m" +
-      " LeetCode Solutions Submit - Luis Osio Chico " +
+      " DSA Preparation Submit - Luis Osio Chico " +
       "\x1b[0m"
   );
   clack.note(
