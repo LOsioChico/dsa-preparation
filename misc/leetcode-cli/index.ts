@@ -28,7 +28,7 @@ const start = async () => {
   clack.outro(`Welcome ${userData.userStatus.username}! 👋`);
 
   const languages = await getLanguagesFromReadme();
-  const language = (await clack.select({
+  const language = await clack.select({
     message: "Please select the language you want to use:",
     options: [
       ...languages.map((language) => ({
@@ -36,7 +36,14 @@ const start = async () => {
         label: language,
       })),
     ],
-  })) as string;
+  });
+
+  if (typeof language !== "string") {
+    clack.cancel(
+      "[!] Exiting... Please try again, if you have any issues open a issue ⭐"
+    );
+    exit(1);
+  }
 
   try {
     execSync(`cd ../../algorithms/${language}`, { stdio: "ignore" });
