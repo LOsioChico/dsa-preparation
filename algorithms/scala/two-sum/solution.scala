@@ -53,7 +53,7 @@ object Solution {
     numbers.zipWithIndex.find((number, index) =>
       hashMap.get(target - number) match
         case Some(_) => true
-        case None    => hashMap.put(number, index).isDefined
+        case None    => hashMap.put(number, index); false
     ) match {
       case Some(number, index) => Array(hashMap(target - number), index)
       case None                => Array.empty
