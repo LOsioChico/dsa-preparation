@@ -49,7 +49,7 @@ const start = async () => {
   const exercise = await clack.text({
     message: "Please enter the exercise you want to run:",
     placeholder: "two-sum",
-    validate: (input) => {
+    validate: (input: string) => {
       if (input.length === 0) return "Please enter a valid command: [exercise]";
 
       try {
@@ -114,9 +114,23 @@ const start = async () => {
    Memory: ${status.status_memory}
    Memory Percentile: ${Math.round(status.memory_percentile)}%`;
       break;
+    case 15:
+      message = `Language: ${status.pretty_lang}
+   Status: ${status.status_msg}
+   Error: ${status.runtime_error}
+   Runtime Errors: ${status.full_runtime_error?.replaceAll("\n", "\n\t\t")}
+   Console Output: ${status.std_output.replaceAll("\n", "\n\t\t\t") || "No logs"}
+   Last Testcase: ${status.last_testcase
+     .split("\\n")
+     .map((param, index) => `param${index + 1} = ${param}`)
+     .join()}
+   Expected Output: ${status.expected_output}
+   `;
+      break;
     case 20:
       message = `Language: ${status.pretty_lang}
    Status: ${status.status_msg}
+   Error: ${status.runtime_error}
    Code Errors: ${status.full_compile_error?.replaceAll("\n", "\n\t\t\t")}`;
       break;
   }
