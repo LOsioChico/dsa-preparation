@@ -51,15 +51,13 @@ object Solution {
   def twoSumHashMap(numbers: Array[Int], target: Int): Array[Int] = {
     val hashMap = new HashMap[Int, Int]()
 
-    numbers.zipWithIndex.foreach { case (number, index) =>
-      val remaining = target - number
-
-      hashMap.get(remaining) match {
-        case Some(value) => return Array(value, index)
-        case None        => hashMap.addOne(number, index)
-      }
+    numbers.zipWithIndex.find((number, index) =>
+      hashMap.get(target - number) match
+        case Some(_) => true
+        case None    => hashMap.put(number, index).isDefined
+    ) match {
+      case Some(number, index) => Array(hashMap(target - number), index)
+      case None                => Array.empty
     }
-
-    Array(0, 0)
   }
 }
