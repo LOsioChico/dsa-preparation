@@ -19,10 +19,10 @@ import scala.collection.mutable.HashMap
   * Output: (0,1)
   * Explanation: Because numbers(0) + numbers(1) == 9, we return (0,1)
   * 
-  * Input: nums = (3,2,4), target = 6
+  * Input: numbers = (3,2,4), target = 6
   * Output: (1,2)
   * 
-  * Input: nums = (3,3), target = 6
+  * Input: numbers = (3,3), target = 6
   * Output: (0,1)
   *
   * Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
