@@ -11,7 +11,7 @@ elif [[ $# -eq 1 ]]; then
     echo "----------------------------------------"
     command=$1
     if [[ $command == "submit" ]]; then
-        cd ./misc/leetcode-cli && pnpm install && pnpm start
+        cd ./misc/leetcode-cli && pnpm install --silent && pnpm start
     else 
         echo "[!] Wrong use of the script, the available 1 position options are:"
         echo "- submit"
@@ -58,7 +58,7 @@ case $language in
     "typescript"|"ts")
         echo "[+] Running TypeScript"
         cd ./algorithms/typescript
-        pnpm install
+        pnpm install --silent
         pnpm test run $problem/$testName
         ;;
     "scala"|"sc")
