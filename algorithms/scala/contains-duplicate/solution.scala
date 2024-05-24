@@ -2,6 +2,9 @@
 
 package containsDuplicate
 
+import scala.util.boundary
+import scala.util.boundary.break
+
 /**
  * @tag Array; Hash Table; Sorting
  ***************************************************************************
@@ -22,7 +25,21 @@ package containsDuplicate
  */
 
 object Solution {
-  def containsDuplicateNestedLoops(numbers: Array[Int]): Boolean = ???
+  // Quick solution (brute force) - O(n^2) time and O(1) space
+  // Using nested loops to find the duplicate numbers
+  def containsDuplicateNestedLoops(numbers: Array[Int]): Boolean = {
+    boundary[Boolean] {
+      for (i <- numbers.indices) {
+        for (j <- Range(i + 1, numbers.size)) {
+          if (numbers(i) == numbers(j)) break(true)
+        }
+      }
+
+      false
+    }
+  }
+
   def containsDuplicateSorting(numbers: Array[Int]): Boolean = ???
+
   def containsDuplicateHashTable(numbers: Array[Int]): Boolean = ???
 }
