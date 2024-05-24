@@ -96,10 +96,18 @@ const generateAlgorithmsFiles = async () => {
       fileComments,
       problem
     );
-    await fs.writeFile(solutionFilePath, solutionContent, {
-      encoding: "utf-8",
-      flag: "wx",
-    });
+
+    try {
+      await fs.writeFile(solutionFilePath, solutionContent, {
+        encoding: "utf-8",
+        flag: "wx",
+      });
+    } catch {
+      clack.cancel(
+        "[!] The problem already exists in the selected language(s), please remove it and try again."
+      );
+      exit(1);
+    }
   });
 };
 
