@@ -4,6 +4,7 @@ package containsDuplicate
 
 import scala.util.boundary
 import scala.util.boundary.break
+import scala.collection.mutable.HashMap
 
 /**
  * @tag Array; Hash Table; Sorting
@@ -51,5 +52,19 @@ object Solution {
     }
   }
 
-  def containsDuplicateHashTable(numbers: Array[Int]): Boolean = ???
+  // Best solution (hash table) - O(n) time and O(n) space
+  // Iterate and get on the hash map if not exist add it
+  def containsDuplicateHashTable(numbers: Array[Int]): Boolean = {
+    val seen = HashMap[Int, Boolean]()
+
+    numbers.find(number =>
+      seen.get(number) match {
+        case Some(_) => true
+        case None    => seen.put(number, true); false
+      }
+    ) match {
+      case Some(_) => true
+      case None    => false
+    }
+  }
 }
