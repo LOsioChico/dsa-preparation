@@ -1,4 +1,3 @@
-import config from "../utils/config.ts";
 import Helper from "../utils/helper.ts";
 import {
   CodeSnippet,
