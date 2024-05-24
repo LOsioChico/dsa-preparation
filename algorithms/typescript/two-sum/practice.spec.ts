@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import twoSum from "./practice";
 
-describe("Practice test", () => {
+describe("Two Sum Practice tests", () => {
   it("Should return [0, 3] when the numbers are [0, 4, 3, 0] and the target is 0", () => {
     const numbers = [0, 4, 3, 0];
     const target = 0;

@@ -4,8 +4,8 @@
 
 import org.scalatest.funspec.AnyFunSpec
 
-class PracticeTests extends AnyFunSpec {
-  describe("Practice test") {
+class TwoSumPracticeTests extends AnyFunSpec {
+  describe("Two Sum Practice tests") {
     it(
       "Should return Array(0, 3) when the numbers are Array(0, 4, 3, 0) and the target is 0"
     ) {

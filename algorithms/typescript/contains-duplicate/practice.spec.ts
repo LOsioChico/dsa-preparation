@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import containsDuplicate from "./practice";
 
-describe("Solution test", () => {
+describe("Contain Duplicates Solution tests", () => {
   it("Should return true when the numbers are [1,2,3,1]", () => {
     const numbers = [1, 2, 3, 1];
     expect(containsDuplicate(numbers)).toBeTruthy();
