@@ -160,7 +160,6 @@ const getCodeToSubmit = async (code: string, language: string) => {
     .split("*/")[1]
     .slice(0, lastBracket + 1)
     .replace("Practice", "Solution")
-    // remove the first two "\n" or "\r\n"
     .replace(/^\n|\r\n/gm, "");
 
   if (language === "scala" && codeToSubmit.includes("return")) {
