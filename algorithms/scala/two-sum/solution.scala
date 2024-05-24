@@ -33,7 +33,7 @@ import scala.collection.mutable.HashMap
 object Solution {
   // Quick solution (brute force) - O(n^2) time and O(1) space
   // Using nested loops to find the two numbers
-  def twoSumNestedLoop(numbers: Array[Int], target: Int): Array[Int] = {
+  def twoSumNestedLoops(numbers: Array[Int], target: Int): Array[Int] = {
     boundary[Array[Int]] {
       for (i <- numbers.indices) {
         for (j <- Range(i + 1, numbers.size)) {

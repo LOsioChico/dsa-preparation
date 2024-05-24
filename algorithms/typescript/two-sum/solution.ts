@@ -25,7 +25,7 @@
 
 // Quick solution (brute force) - O(n^2) time and O(1) space
 // Using nested loops to find the two numbers
-export const twoSumNestedLoop = (numbers: number[], target: number) => {
+export const twoSumNestedLoops = (numbers: number[], target: number) => {
   for (let i = 0; i < numbers.length; i++) {
     for (let j = i + 1; j < numbers.length; j++) {
       if (numbers[i] + numbers[j] === target) {

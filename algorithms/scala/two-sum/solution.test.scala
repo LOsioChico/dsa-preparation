@@ -14,7 +14,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(0, 4, 3, 0);
       val target = 0;
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(0, 3).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(0, 3).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(0, 3).toList
@@ -27,7 +27,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(2, 7, 11, 13);
       val target = 9;
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(0, 1).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(0, 1).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(0, 1).toList
@@ -40,7 +40,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(13, 7, 11, 2)
       val target = 9
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(1, 3).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(1, 3).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(1, 3).toList
@@ -53,7 +53,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(13, 11, 7, 2)
       val target = 9
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(2, 3).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(2, 3).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(2, 3).toList
@@ -66,7 +66,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(13, 11, 7, 2)
       val target = 24
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(0, 1).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(0, 1).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(0, 1).toList
@@ -79,7 +79,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(13, 11, 7, 2)
       val target = 15
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(0, 3).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(0, 3).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(0, 3).toList
@@ -92,7 +92,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(3, 3)
       val target = 6
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(0, 1).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(0, 1).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(0, 1).toList
@@ -105,7 +105,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val numbers = Array(1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1)
       val target = 11
       assert(
-        Solution.twoSumNestedLoop(numbers, target).toList == Array(5, 11).toList
+        Solution.twoSumNestedLoops(numbers, target).toList == Array(5, 11).toList
       )
       assert(
         Solution.twoSumHashMap(numbers, target).toList == Array(5, 11).toList
