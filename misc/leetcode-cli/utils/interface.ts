@@ -203,6 +203,8 @@ export interface CheckStatusResponse {
   total_testcases: number;
   compile_error?: string;
   full_compile_error?: string;
+  runtime_error?: string;
+  full_runtime_error?: string;
 }
 export type CheckStatusStatus = "PENDING" | "STARTED" | "SUCCESS";
 
