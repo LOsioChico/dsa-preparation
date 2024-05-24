@@ -39,7 +39,17 @@ object Solution {
     }
   }
 
-  def containsDuplicateSorting(numbers: Array[Int]): Boolean = ???
+  // Quick solution (sorting) - O(n * log(n)) time and O(n) space
+  // Sorting the numbers and check the current and the previous
+  def containsDuplicateSorting(numbers: Array[Int]): Boolean = {
+    val sortedNumbers = numbers.sorted
+
+    boundary[Boolean] {
+      for (i <- Range(1, numbers.size))
+        if (sortedNumbers(i - 1) == sortedNumbers(i)) break(true)
+      false
+    }
+  }
 
   def containsDuplicateHashTable(numbers: Array[Int]): Boolean = ???
 }
