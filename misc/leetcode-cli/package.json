@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "start": "tsx ./index.ts"
+    "start": "tsx ./index.ts",
+    "generate": "tsx ./misc/generateAlgorithmsFiles.ts"
   },
   "keywords": [],
   "author": "",
