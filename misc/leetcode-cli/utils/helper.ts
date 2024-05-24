@@ -60,6 +60,36 @@ class Helper {
     typescript: "ts",
     scala: "scala",
   };
+
+  static languageFileExtension: Record<string, Record<string, string>> = {
+    typescript: {
+      exercise: "ts",
+      test: "test.ts",
+    },
+    scala: {
+      exercise: "scala",
+      test: "test.scala",
+    },
+  };
+
+  static startFilePracticeCode = (language: string, packageName?: string) => {
+    const code: Record<string, string | undefined> = {
+      scala: `//> using scala "3.3.1"\n\npackage ${packageName}`,
+    };
+
+    return code[language];
+  };
+
+  static endFilePracticeCode = (language: string, codeRaw?: string) => {
+    const code: Record<string, () => string> = {
+      typescript: () => {
+        const functionName = codeRaw?.split("function ")[1].split("(")[0];
+        return `export default ${functionName};`;
+      },
+    };
+
+    return code[language]?.();
+  };
 }
 
 export default Helper;
