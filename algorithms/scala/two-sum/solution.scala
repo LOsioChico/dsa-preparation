@@ -35,13 +35,15 @@ object Solution {
   def twoSumNestedLoop(numbers: Array[Int], target: Int): Array[Int] = {
     val result = Array(0, 0)
 
-    boundary[Array[Int]]:
+    boundary[Array[Int]] {
       for (i <- numbers.indices) {
         for (j <- Range(i + 1, numbers.size)) {
           if (numbers(i) + numbers(j) == target) break(Array(i, j))
         }
       }
+
       Array.empty
+    }
   }
 
   // Best solution (hash table) - O(n) time and O(n) space
