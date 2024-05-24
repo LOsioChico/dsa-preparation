@@ -119,7 +119,6 @@ const start = async () => {
    Status: ${status.status_msg}
    Error: ${status.runtime_error}
    Runtime Errors: ${status.full_runtime_error?.replaceAll("\n", "\n\t\t")}
-   Console Output: ${status.std_output.replaceAll("\n", "\n\t\t\t") || "No logs"}
    Last Testcase: ${status.last_testcase
      .split("\\n")
      .map((param, index) => `param${index + 1} = ${param}`)
