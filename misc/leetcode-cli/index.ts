@@ -5,6 +5,7 @@ import Helper from "./utils/helper.ts";
 import Problem from "./lib/problem.ts";
 import { exit } from "node:process";
 import Leetcode from "./lib/leetcode.ts";
+import { getLanguagesFromReadme } from "./utils/utils.ts";
 
 const start = async () => {
   Helper.configure();
@@ -138,25 +139,6 @@ const start = async () => {
   clack.outro(
     "Thanks for using my project, if you like it, please give it a star on GitHub! ⭐"
   );
-};
-
-const getLanguagesFromReadme = async () => {
-  const readme = await fs.readFile("../../README.md", "utf-8");
-  if (!readme) {
-    clack.cancel("README.md not found");
-    exit(1);
-  }
-
-  const table = readme
-    .split("## Languages")[1]
-    .split("## Usage")[0]
-    .split("\r\n");
-  const lines = table.filter((line) => line.trim().length > 0).splice(2);
-  const languages = lines.map(
-    (line) => line.split("|").map((l) => l.trim())[1]
-  );
-
-  return languages;
 };
 
 const getCodeToSubmit = async (code: string, language: string) => {
