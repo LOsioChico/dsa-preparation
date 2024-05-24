@@ -2,6 +2,8 @@
 //> using test.dep org.scalatest::scalatest::3.2.18
 //> using file solution.scala
 
+package twoSum
+
 import org.scalatest.funspec.AnyFunSpec
 
 class TwoSumSolutionTests extends AnyFunSpec {

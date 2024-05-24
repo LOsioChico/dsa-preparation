@@ -1,5 +1,7 @@
 //> using scala "3.3.1"
 
+package twoSum
+
 /** 
   * @tag Array; Hash Table
   ***************************************************************************
@@ -27,6 +29,6 @@
 
 object Practice {
   def twoSum(numbers: Array[Int], target: Int): Array[Int] = {
-    Array(0, 0)
+    Array.empty
   }
 }

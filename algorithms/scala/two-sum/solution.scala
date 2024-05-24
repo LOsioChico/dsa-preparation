@@ -1,4 +1,5 @@
 //> using scala "3.3.1"
+package twoSum
 
 import scala.util.boundary
 import scala.util.boundary.break
