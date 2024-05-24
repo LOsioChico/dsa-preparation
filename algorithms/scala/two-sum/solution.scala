@@ -33,8 +33,6 @@ object Solution {
   // Quick solution (brute force) - O(n^2) time and O(1) space
   // Using nested loops to find the two numbers
   def twoSumNestedLoop(numbers: Array[Int], target: Int): Array[Int] = {
-    val result = Array(0, 0)
-
     boundary[Array[Int]] {
       for (i <- numbers.indices) {
         for (j <- Range(i + 1, numbers.size)) {
