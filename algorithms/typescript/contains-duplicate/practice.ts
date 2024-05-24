@@ -1,7 +1,7 @@
 /**
  * @tag Array; Hash Table; Sorting
  ***************************************************************************
- * Given an integer array numbers, return true if any value appears at least
+ * Given an integer array nums, return true if any value appears at least
  * twice in the array, and return false if every element is distinct.
  *
  * Input: nums = [1,2,3,1]
@@ -17,7 +17,7 @@
  *  { @link https://leetcode.com/problems/contains-duplicate/ }
  */
 
-const containsDuplicate = (numbers: number[]): boolean => {
+const containsDuplicate = (nums: number[]): boolean => {
   return false;
 };
 

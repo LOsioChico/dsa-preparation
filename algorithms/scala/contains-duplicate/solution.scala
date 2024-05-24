@@ -9,16 +9,16 @@ import scala.collection.mutable.HashMap
 /**
  * @tag Array; Hash Table; Sorting
  ***************************************************************************
- * Given an integer array numbers, return true if any value appears at least
+ * Given an integer array nums, return true if any value appears at least
  * twice in the array, and return false if every element is distinct.
  *
- * Input: numbers = (1,2,3,1)
+ * Input: nums = (1,2,3,1)
  * Output: true
  *
- * Input: numbers = (1,2,3,4)
+ * Input: nums = (1,2,3,4)
  * Output: false
  *
- * Input: numbers = (1,1,1,3,3,4,3,2,4,2)
+ * Input: nums = (1,1,1,3,3,4,3,2,4,2)
  * Output: true
  *
  ***************************************************************************
@@ -27,12 +27,12 @@ import scala.collection.mutable.HashMap
 
 object Solution {
   // Quick solution (brute force) - O(n^2) time and O(1) space
-  // Using nested loops to find the duplicate numbers
-  def containsDuplicateNestedLoops(numbers: Array[Int]): Boolean = {
+  // Using nested loops to find the duplicate nums
+  def containsDuplicateNestedLoops(nums: Array[Int]): Boolean = {
     boundary[Boolean] {
-      for (i <- numbers.indices) {
-        for (j <- Range(i + 1, numbers.size)) {
-          if (numbers(i) == numbers(j)) break(true)
+      for (i <- nums.indices) {
+        for (j <- Range(i + 1, nums.size)) {
+          if (nums(i) == nums(j)) break(true)
         }
       }
 
@@ -41,23 +41,23 @@ object Solution {
   }
 
   // Quick solution (sorting) - O(n * log(n)) time and O(n) space
-  // Sorting the numbers and check the current and the previous
-  def containsDuplicateSorting(numbers: Array[Int]): Boolean = {
-    val sortedNumbers = numbers.sorted
+  // Sorting the nums and check the current and the previous
+  def containsDuplicateSorting(nums: Array[Int]): Boolean = {
+    val sortednums = nums.sorted
 
     boundary[Boolean] {
-      for (i <- Range(1, numbers.size))
-        if (sortedNumbers(i - 1) == sortedNumbers(i)) break(true)
+      for (i <- Range(1, nums.size))
+        if (sortednums(i - 1) == sortednums(i)) break(true)
       false
     }
   }
 
   // Best solution (hash table) - O(n) time and O(n) space
   // Iterate and get on the hash map if not exist add it
-  def containsDuplicateHashTable(numbers: Array[Int]): Boolean = {
+  def containsDuplicateHashTable(nums: Array[Int]): Boolean = {
     val seen = HashMap[Int, Boolean]()
 
-    numbers.find(number =>
+    nums.find(number =>
       seen.get(number) match {
         case Some(_) => true
         case None    => seen.put(number, true); false

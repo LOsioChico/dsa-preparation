@@ -5,16 +5,16 @@ package containsDuplicate
 /**
  * @tag Array; Hash Table; Sorting
  ***************************************************************************
- * Given an integer array numbers, return true if any value appears at least
+ * Given an integer array nums, return true if any value appears at least
  * twice in the array, and return false if every element is distinct.
  *
- * Input: numbers = (1,2,3,1)
+ * Input: nums = (1,2,3,1)
  * Output: true
  *
- * Input: numbers = (1,2,3,4)
+ * Input: nums = (1,2,3,4)
  * Output: false
  *
- * Input: numbers = (1,1,1,3,3,4,3,2,4,2)
+ * Input: nums = (1,1,1,3,3,4,3,2,4,2)
  * Output: true
  *
  ***************************************************************************
@@ -22,5 +22,5 @@ package containsDuplicate
  */
 
 object Practice {
-  def containsDuplicate(numbers: Array[Int]): Boolean = ???
+  def containsDuplicate(nums: Array[Int]): Boolean = ???
 }
