@@ -53,7 +53,9 @@ const start = async () => {
       if (input.length === 0) return "Please enter a valid command: [exercise]";
 
       try {
-        execSync(`cd ../../algorithms/${language}/${input}`, { stdio: "ignore" });
+        execSync(`cd ../../algorithms/${language}/${input}`, {
+          stdio: "ignore",
+        });
       } catch {
         return "[!] Exercise not found, check the README.md or if its a error open a issue ⭐";
       }
@@ -161,7 +163,7 @@ const getCodeToSubmit = async (code: string, language: string) => {
 
   if (language === "scala" && codeToSubmit.includes("return")) {
     clack.cancel(
-      "[!] Please don't use return in Scala, LeetCode will not accept it :("
+      "[!] Returns are no supported, use `boundary` and `boundary.break` in `scala.util` instead"
     );
     exit(1);
   }
