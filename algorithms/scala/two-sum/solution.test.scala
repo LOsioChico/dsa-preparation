@@ -96,5 +96,18 @@ class SolutionTests extends AnyFunSpec {
         Solution.twoSumHashMap(numbers, target).toList == Array(0, 1).toList
       )
     }
+
+    it(
+      "Should return Array(4, 11) when the numbers are Array(1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1) and the target is 11"
+    ) {
+      val numbers = Array(1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1)
+      val target = 11
+      assert(
+        Solution.twoSumNestedLoop(numbers, target).toList == Array(5, 11).toList
+      )
+      assert(
+        Solution.twoSumHashMap(numbers, target).toList == Array(5, 11).toList
+      )
+    }
   }
 }
