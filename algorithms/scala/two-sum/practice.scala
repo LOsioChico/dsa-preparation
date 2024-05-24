@@ -28,7 +28,5 @@ package twoSum
   */
 
 object Practice {
-  def twoSum(numbers: Array[Int], target: Int): Array[Int] = {
-    Array.empty
-  }
+  def twoSum(numbers: Array[Int], target: Int): Array[Int] = ???
 }
