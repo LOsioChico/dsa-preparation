@@ -170,7 +170,7 @@ const getCodeToSubmit = async (code: string, language: string) => {
 
   const imports = code.split("\n").filter((line) => line.includes("import"));
 
-  return `${imports.join("\n")}\n${codeToSubmit}`;
+  return `${imports.join("\n")}\n\n${codeToSubmit}`;
 };
 
 const areBracketsBalanced = (code: string) => {
