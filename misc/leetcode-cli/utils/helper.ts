@@ -72,7 +72,13 @@ class Helper {
     },
   };
 
-  static startFilePracticeCode = (language: string, packageName?: string) => {
+  static startExercisesFileCode = ({
+    language,
+    packageName,
+  }: {
+    language: string;
+    packageName?: string;
+  }) => {
     const code: Record<string, string | undefined> = {
       scala: `//> using scala "3.3.1"\n\npackage ${packageName}`,
     };
@@ -80,7 +86,13 @@ class Helper {
     return code[language];
   };
 
-  static endFilePracticeCode = (language: string, codeRaw?: string) => {
+  static endExercisesFileCode = ({
+    language,
+    codeRaw,
+  }: {
+    language: string;
+    codeRaw?: string;
+  }) => {
     const code: Record<string, () => string> = {
       typescript: () => {
         const functionName = codeRaw?.split("function ")[1].split("(")[0];

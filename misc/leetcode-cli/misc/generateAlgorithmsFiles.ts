@@ -85,13 +85,13 @@ const generateAlgorithmsFiles = async () => {
 
   languagesSelected.forEach(async (language) => {
     const solutionFilePath = `../../algorithms/${language}/${problemSlug}/solution.${Helper.languageFileExtension[language].exercise}`;
-    const solutionTestFilePath = `../../algorithms/${language}/${problemSlug}/solution.${Helper.languageFileExtension[language].test}`;
+    // const solutionTestFilePath = `../../algorithms/${language}/${problemSlug}/solution.${Helper.languageFileExtension[language].test}`;
 
     await fs.mkdir(`../../algorithms/${language}/${problemSlug}`, {
       recursive: true,
     });
 
-    const solutionContent = generateSolutionContentFile(
+    const { solutionContent } = generateContentFiles(
       language,
       fileComments,
       problem
@@ -161,7 +161,7 @@ ${problemContent}
  */`;
 };
 
-const generateSolutionContentFile = (
+const generateContentFiles = (
   language: string,
   fileComments: string,
   problem: Problem
@@ -170,19 +170,22 @@ const generateSolutionContentFile = (
     (snippet) => snippet.langSlug === Helper.languageToLeetCodeLang[language]
   )!.code;
 
-  const initialFileCode = Helper.startFilePracticeCode(
+  const initialExercisesFileCode = Helper.startExercisesFileCode({
     language,
-    kebabToCamelCase(problem.slug)
-  );
-  const endFileCode = Helper.endFilePracticeCode(language, codeSnippet);
+    packageName: kebabToCamelCase(problem.slug),
+  });
+  const endExcercisesFileCode = Helper.endExercisesFileCode({
+    language,
+    codeRaw: codeSnippet,
+  });
 
-  let solutionFileContent = "";
-  if (initialFileCode) solutionFileContent += initialFileCode + "\n\n";
-  solutionFileContent += fileComments + "\n\n";
-  solutionFileContent += codeSnippet + "\n";
-  if (endFileCode) solutionFileContent += "\n" + endFileCode + "\n";
+  let solutionContent = "";
+  if (initialExercisesFileCode)
+    solutionContent += initialExercisesFileCode + "\n\n";
+  solutionContent += fileComments + "\n\n";
+  solutionContent += codeSnippet + "\n";
+  if (endExcercisesFileCode)
+    solutionContent += "\n" + endExcercisesFileCode + "\n";
 
-  return solutionFileContent;
+  return { solutionContent };
 };
-
-void generateAlgorithmsFiles();
