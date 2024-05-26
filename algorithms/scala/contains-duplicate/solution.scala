@@ -35,29 +35,27 @@ object Solution {
           if (nums(i) == nums(j)) break(true)
       false
   }
-}
 
 // Sorting - O(n * log(n)) time and O(n) space
 // Sorting the nums and check the current and the previous
-def containsDuplicateSorting(nums: Array[Int]): Boolean = {
-  nums.sortInPlace
+  def containsDuplicateSorting(nums: Array[Int]): Boolean = {
+    nums.sortInPlace
 
-  boundary[Boolean]:
-    for (i <- Range(1, nums.size))
-      if (nums(i - 1) == nums(i)) break(true)
-    false
-}
+    boundary[Boolean]:
+      for (i <- Range(1, nums.size))
+        if (nums(i - 1) == nums(i)) break(true)
+      false
+  }
 
 // Hash Table - O(n) time and O(n) space
 // Iterate and get on the hash map if not exist add it
-def containsDuplicateHashTable(nums: Array[Int]): Boolean = {
-  val seen = HashMap[Int, Boolean]()
+  def containsDuplicateHashTable(nums: Array[Int]): Boolean = {
+    val seen = HashMap[Int, Boolean]()
 
-  nums.find(number =>
-    seen.get(number) match
-      case Some(_) => true
-      case None    => seen.put(number, true); false
-  ) match
-    case Some(_) => true
-    case None    => false
+    nums.find(number =>
+      seen.get(number) match
+        case Some(_) => true
+        case None    => seen.put(number, true); false
+    ) != None
+  }
 }
