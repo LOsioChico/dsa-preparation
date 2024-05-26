@@ -59,4 +59,14 @@ object Solution {
       counter.forall((_, count) => count == 0)
     else false
   }
+
+  // Sorting - O(n * log(n)) time and O(2n) → O(n) space
+  // After valid the length, sort the strings and check if have the same
+  // elements on every position
+  def isAnagramSorting(s: String, t: String): Boolean = {
+    if (s.length == t.length)
+      val (sortedS, sortedT) = (s.sorted, t.sorted)
+      s.indices.forall(index => sortedS(index) == sortedT(index))
+    else false
+  }
 }
