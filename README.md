@@ -129,7 +129,7 @@ For the script to work, you need to have to need an bash shell and the following
 | #   | Problem                                                                 | Tags                           | Languages                                                          | Notes                                                                                                                                 |
 | --- | ----------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [Two Sum](https://leetcode.com/problems/two-sum/)                       | `Array` `Hash Table`           | [TypeScript](typescript/two-sum) [Scala](scala/two-sum)            | 1. Brute force O(n^2) and O(1) space<br/>2. HashTable O(n) time and O(n) space<br/>                                                   |
-| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | `Array` `Hash Table` `Sorting` | [TypeScript](typescript/contains-duplicate) [Scala](scala/two-sum) | 1. [!!] Brute force O(n^2) and O(1) space<br/>2. Sorting O(n \* log(n)) time and O(n) space<br/>3. HashTable O(n) time and O(n) space |
+| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | `Array` `Hash Table` `Sorting` | [TypeScript](typescript/contains-duplicate) [Scala](scala/two-sum) | 1. [!!] Brute force O(n^2) and O(1) space<br/>2. Sorting O(n \* log(n)) time and O(1) space<br/>3. HashTable O(n) time and O(n) space |
 
 <br/>
 <div align="right">

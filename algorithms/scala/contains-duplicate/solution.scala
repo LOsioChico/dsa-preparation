@@ -36,7 +36,7 @@ object Solution {
       false
   }
 
-// Sorting - O(n * log(n)) time and O(n) space
+// Sorting - O(n * log(n)) time and O(1) space
 // Sorting the nums and check the current and the previous
   def containsDuplicateSorting(nums: Array[Int]): Boolean = {
     nums.sortInPlace
