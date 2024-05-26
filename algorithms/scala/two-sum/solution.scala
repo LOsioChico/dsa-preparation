@@ -50,15 +50,15 @@ object Solution {
   // Hash Table - O(n) time and O(n) space
   // Iterate and get the remaining value using the current number and the target value,
   // if exist save it with the index
-  def twoSumHashMap(nums: Array[Int], target: Int): Array[Int] = {
-    val hashMap = new HashMap[Int, Int]()
+  def twoSumHashTable(nums: Array[Int], target: Int): Array[Int] = {
+    val hashTable = new HashMap[Int, Int]()
 
     nums.zipWithIndex.find((number, index) =>
-      hashMap.get(target - number) match
+      hashTable.get(target - number) match
         case Some(_) => true
-        case None    => hashMap.put(number, index); false
+        case None    => hashTable.put(number, index); false
     ) match {
-      case Some(number, index) => Array(hashMap(target - number), index)
+      case Some(number, index) => Array(hashTable(target - number), index)
       case None                => Array.empty
     }
   }

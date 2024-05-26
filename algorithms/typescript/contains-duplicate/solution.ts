@@ -45,7 +45,7 @@ export const containsDuplicateSorting = (nums: number[]): boolean => {
 // Hash Table - O(n) time and O(n) space
 // Iterate and check if the nums is already seen, if not save it with a
 // truthy value
-export const containsDuplicateHashMap = (nums: number[]): boolean => {
+export const containsDuplicateHashTable = (nums: number[]): boolean => {
   const seen = new Map<number, boolean>();
 
   for (let i = 0; i < nums.length; i++) {

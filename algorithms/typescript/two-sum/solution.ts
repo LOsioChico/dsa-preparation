@@ -39,7 +39,7 @@ export const twoSumNestedLoops = (nums: number[], target: number) => {
 // Hash Table - O(n) time and O(n) space
 // Iterate and get the remaining value using the current number and the
 // target value, if exist save it with the index
-export const twoSumHashMap = (nums: number[], target: number) => {
+export const twoSumHashTable = (nums: number[], target: number) => {
   const hashTable = new Map<number, number>();
 
   for (let i = 0; i < nums.length; i++) {
