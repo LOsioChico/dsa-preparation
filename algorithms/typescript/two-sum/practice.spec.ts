@@ -37,4 +37,16 @@ describe("Two Sum Practice tests", () => {
     const target = 15;
     expect(twoSum(nums, target)).toEqual([0, 3]);
   });
+
+  it("Should return [0, 1] when the nums are [3, 3] and the target is 6", () => {
+    const nums = [3, 3];
+    const target = 6;
+    expect(twoSum(nums, target)).toEqual([0, 1]);
+  });
+
+  it("Should return [4, 11] when the nums are [1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1] and the target is 11", () => {
+    const nums = [1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1];
+    const target = 11;
+    expect(twoSum(nums, target)).toEqual([4, 11]);
+  });
 });

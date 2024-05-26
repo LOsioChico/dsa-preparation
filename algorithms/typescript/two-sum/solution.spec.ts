@@ -43,4 +43,18 @@ describe("Two Sum Solution tests", () => {
     expect(twoSumNestedLoops(nums, target)).toEqual([0, 3]);
     expect(twoSumHashTable(nums, target)).toEqual([0, 3]);
   });
+
+  it("Should return [0, 1] when the nums are [3, 3] and the target is 6", () => {
+    const nums = [3, 3];
+    const target = 6;
+    expect(twoSumNestedLoops(nums, target)).toEqual([0, 1]);
+    expect(twoSumHashTable(nums, target)).toEqual([0, 1]);
+  });
+
+  it("Should return [4, 11] when the nums are [1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1] and the target is 11", () => {
+    const nums = [1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1];
+    const target = 11;
+    expect(twoSumNestedLoops(nums, target)).toEqual([4, 11]);
+    expect(twoSumHashTable(nums, target)).toEqual([4, 11]);
+  });
 });
