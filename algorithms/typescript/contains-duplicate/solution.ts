@@ -55,3 +55,16 @@ export const containsDuplicateHashTable = (nums: number[]): boolean => {
 
   return false;
 };
+
+// Hash Set - O(n) time and O(n) space
+// Iterate and check if was exists or was added on the set
+export const containsDuplicateHashSet = (nums: number[]): boolean => {
+  const seen = new Set<number>();
+
+  const result = nums.find((num) => {
+    if (seen.has(num)) return true;
+    else seen.add(num);
+  });
+
+  return result != undefined;
+};

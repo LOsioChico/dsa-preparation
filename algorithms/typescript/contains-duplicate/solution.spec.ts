@@ -3,6 +3,7 @@ import {
   containsDuplicateHashTable,
   containsDuplicateNestedLoops,
   containsDuplicateSorting,
+  containsDuplicateHashSet,
 } from "./solution";
 
 describe("Contains Duplicate Solution tests", () => {
@@ -11,6 +12,7 @@ describe("Contains Duplicate Solution tests", () => {
     expect(containsDuplicateNestedLoops(nums)).toBeTruthy();
     expect(containsDuplicateSorting(nums)).toBeTruthy();
     expect(containsDuplicateHashTable(nums)).toBeTruthy();
+    expect(containsDuplicateHashSet(nums)).toBeTruthy();
   });
 
   it("Should return false when the nums are [1, 2, 3, 4]", () => {
@@ -18,6 +20,7 @@ describe("Contains Duplicate Solution tests", () => {
     expect(containsDuplicateNestedLoops(nums)).toBeFalsy();
     expect(containsDuplicateSorting(nums)).toBeFalsy();
     expect(containsDuplicateHashTable(nums)).toBeFalsy();
+    expect(containsDuplicateHashSet(nums)).toBeFalsy();
   });
 
   it("Should return true when the nums are [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]", () => {
@@ -25,5 +28,6 @@ describe("Contains Duplicate Solution tests", () => {
     expect(containsDuplicateNestedLoops(nums)).toBeTruthy();
     expect(containsDuplicateSorting(nums)).toBeTruthy();
     expect(containsDuplicateHashTable(nums)).toBeTruthy();
+    expect(containsDuplicateHashSet(nums)).toBeTruthy();
   });
 });
