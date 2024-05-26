@@ -49,12 +49,14 @@ object Solution {
   def twoSumHashTable(nums: Array[Int], target: Int): Array[Int] = {
     val hashTable = new HashMap[Int, Int]()
 
-    nums.zipWithIndex.find((number, index) =>
-      hashTable.get(target - number) match
-        case Some(_) => true
-        case None    => hashTable.put(number, index); false
-    ) match
-      case Some(number, index) => Array(hashTable(target - number), index)
-      case None                => Array.empty
+    boundary[Array[Int]]:
+      for ((num, index) <- nums.zipWithIndex)
+        val remaining = target - num
+
+        if (hashTable.contains(remaining))
+          break(Array(hashTable(remaining), index))
+        else hashTable.addOne(num, index)
+
+      Array.empty
   }
 }
