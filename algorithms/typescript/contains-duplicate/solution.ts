@@ -17,9 +17,9 @@
  *  { @link https://leetcode.com/problems/contains-duplicate/ }
  */
 
-// [!] Not recommended to submit this one, LT will return `Time Limit Exceeded`
-// Quick solution (brute force) - O(n^2) time and O(1) space
-// Using nested loops to find the two nums
+// [!] Not recommended to submit this one, LT return `Time Limit Exceeded`
+// Brute Force - O(n^2) time and O(1) space
+// Using nested loops to find the the target with the sum of the two nums
 export const containsDuplicateNestedLoops = (nums: number[]): boolean => {
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
@@ -30,7 +30,7 @@ export const containsDuplicateNestedLoops = (nums: number[]): boolean => {
   return false;
 };
 
-// Quick solution (sorting) - O(n * log(n)) time and O(n) space
+// Sorting - O(n * log(n)) time and O(n) space
 // Sorting the nums and check the current and the previous
 export const containsDuplicateSorting = (nums: number[]): boolean => {
   const sortednums = nums.sort();
@@ -42,9 +42,9 @@ export const containsDuplicateSorting = (nums: number[]): boolean => {
   return false;
 };
 
-// Best solution (hash table) - O(n) time and O(n) space
-// Iterate and check if the nums is already seen, if not save
-// it with a truthy value
+// Hash Table - O(n) time and O(n) space
+// Iterate and check if the nums is already seen, if not save it with a
+// truthy value
 export const containsDuplicateHashMap = (nums: number[]): boolean => {
   const seen = new Map<number, boolean>();
 

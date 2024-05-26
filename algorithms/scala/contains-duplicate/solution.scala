@@ -26,7 +26,7 @@ import scala.collection.mutable.HashMap
  */
 
 object Solution {
-  // Quick solution (brute force) - O(n^2) time and O(1) space
+  // Brute Force - O(n^2) time and O(1) space
   // Using nested loops to find the duplicate nums
   def containsDuplicateNestedLoops(nums: Array[Int]): Boolean = {
     boundary[Boolean] {
@@ -40,7 +40,7 @@ object Solution {
     }
   }
 
-  // Quick solution (sorting) - O(n * log(n)) time and O(n) space
+  // Sorting - O(n * log(n)) time and O(n) space
   // Sorting the nums and check the current and the previous
   def containsDuplicateSorting(nums: Array[Int]): Boolean = {
     val sortednums = nums.sorted
@@ -52,7 +52,7 @@ object Solution {
     }
   }
 
-  // Best solution (hash table) - O(n) time and O(n) space
+  // Hash Table - O(n) time and O(n) space
   // Iterate and get on the hash map if not exist add it
   def containsDuplicateHashTable(nums: Array[Int]): Boolean = {
     val seen = HashMap[Int, Boolean]()
@@ -65,6 +65,7 @@ object Solution {
     ) match {
       case Some(_) => true
       case None    => false
+
     }
   }
 }

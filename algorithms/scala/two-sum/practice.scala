@@ -6,9 +6,9 @@ package twoSum
   * @tag Array; Hash Table
   ***************************************************************************
   * Given an array of integers, find two nums such that they add up to a
-  * specific target number. The function twoSum should return indices of the two
-  * nums such that they add up to the target, where the first must be less
-  * than the second.
+  * specific target number. The function twoSum should return indices of the
+  * two nums such that they add up to the target, where the first must be
+  * less than the second.
   *
   * You may assume that each input would have exactly one solution.
   * 
@@ -21,8 +21,9 @@ package twoSum
   * 
   * Input: nums = (3,3), target = 6
   * Output: (0,1)
-  * 
-  * Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+  *
+  * Follow-up: Can you come up with an algorithm that is less than O(n2) time
+  * complexity?
   ***************************************************************************
   * { @link https://leetcode.com/problems/two-sum/ }
   */
