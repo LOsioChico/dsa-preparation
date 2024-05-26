@@ -4,7 +4,7 @@ package containsDuplicate
 
 import scala.util.boundary
 import scala.util.boundary.break
-import scala.collection.mutable.HashMap
+import scala.collection.mutable.{HashMap, HashSet}
 
 /**
  * @tag Array; Hash Table; Sorting
@@ -57,5 +57,12 @@ object Solution {
         case Some(_) => true
         case None    => seen.put(number, true); false
     ) != None
+  }
+
+// Hash Set - O(n) time and O(n) space
+// Iterate and check if was exists or was added on the set
+  def containsDuplicateHashSet(nums: Array[Int]): Boolean = {
+    val seen = HashSet[Int]()
+    nums.find(number => !seen.add(number)) != None
   }
 }

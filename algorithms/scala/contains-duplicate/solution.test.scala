@@ -15,6 +15,7 @@ class ContainsDuplicateSolutionTests extends AnyFunSpec {
       assert(Solution.containsDuplicateNestedLoops(nums) == true)
       assert(Solution.containsDuplicateSorting(nums) == true)
       assert(Solution.containsDuplicateHashTable(nums) == true)
+      assert(Solution.containsDuplicateHashSet(nums) == true)
     }
 
     it(
@@ -24,6 +25,7 @@ class ContainsDuplicateSolutionTests extends AnyFunSpec {
       assert(Solution.containsDuplicateNestedLoops(nums) == false)
       assert(Solution.containsDuplicateSorting(nums) == false)
       assert(Solution.containsDuplicateHashTable(nums) == false)
+      assert(Solution.containsDuplicateHashSet(nums) == false)
     }
 
     it(
@@ -33,6 +35,7 @@ class ContainsDuplicateSolutionTests extends AnyFunSpec {
       assert(Solution.containsDuplicateNestedLoops(nums) == true)
       assert(Solution.containsDuplicateSorting(nums) == true)
       assert(Solution.containsDuplicateHashTable(nums) == true)
+      assert(Solution.containsDuplicateHashSet(nums) == true)
     }
   }
 
