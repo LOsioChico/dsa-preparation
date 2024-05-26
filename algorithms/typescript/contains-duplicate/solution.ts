@@ -30,13 +30,13 @@ export const containsDuplicateNestedLoops = (nums: number[]): boolean => {
   return false;
 };
 
-// Sorting - O(n * log(n)) time and O(n) space
+// Sorting - O(n * log(n)) time and O(1) space
 // Sorting the nums and check the current and the previous
 export const containsDuplicateSorting = (nums: number[]): boolean => {
-  const sortednums = nums.sort();
+  nums.sort();
 
   for (let i = 1; i < nums.length; i++) {
-    if (sortednums[i] === sortednums[i - 1]) return true;
+    if (nums[i] === nums[i - 1]) return true;
   }
 
   return false;
