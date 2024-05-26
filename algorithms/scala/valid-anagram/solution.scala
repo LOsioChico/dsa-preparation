@@ -77,8 +77,8 @@ object Solution {
       def toIndex = (char: Char) => char.toInt - 'a'
 
       for (i <- s.indices) {
-        sHash.update(toIndex(s(i)), sHash(toIndex(s(i))) + 1)
-        tHash.update(toIndex(t(i)), tHash(toIndex(t(i))) + 1)
+        sHash(toIndex(s(i))) += 1
+        tHash(toIndex(t(i))) += 1
       }
 
       sHash.sameElements(tHash)
