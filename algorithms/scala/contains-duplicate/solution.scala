@@ -33,7 +33,6 @@ object Solution {
       for (i <- nums.indices)
         for (j <- Range(i + 1, nums.size))
           if (nums(i) == nums(j)) break(true)
-
       false
   }
 }
