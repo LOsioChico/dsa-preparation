@@ -2,8 +2,6 @@
 
 package validAnagram
 
-import scala.collection.mutable.HashMap
-
 /**
  * @tag Hash Table; String; Sorting
  ***************************************************************************
