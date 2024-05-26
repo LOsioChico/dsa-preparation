@@ -23,7 +23,7 @@ import scala.collection.mutable.HashMap
  */
 
 object Solution {
-  // Hash Table Two Pass - O(n + n) → O(n) time and O(26) → O(1) space, this
+  // Hash Table Two Pass - O(3n) → O(n) time and O(26) → O(1) space, this
   // is based on constraints, s and t consist of lowercase English letters
   // Iterate every param and save it with counter of letters, then compare
   def isAnagramHashTableTwoPass(s: String, t: String): Boolean = {
