@@ -189,3 +189,5 @@ const generateContentFiles = (
 
   return { solutionContent };
 };
+
+void generateAlgorithmsFiles();
