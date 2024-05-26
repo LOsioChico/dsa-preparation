@@ -43,13 +43,12 @@ object Solution {
   // Sorting - O(n * log(n)) time and O(n) space
   // Sorting the nums and check the current and the previous
   def containsDuplicateSorting(nums: Array[Int]): Boolean = {
-    val sortednums = nums.sorted
+    nums.sortInPlace
 
-    boundary[Boolean] {
+    boundary[Boolean]:
       for (i <- Range(1, nums.size))
-        if (sortednums(i - 1) == sortednums(i)) break(true)
+        if (nums(i - 1) == nums(i)) break(true)
       false
-    }
   }
 
   // Hash Table - O(n) time and O(n) space
