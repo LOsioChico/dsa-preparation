@@ -43,4 +43,20 @@ object Solution {
       )
     else false
   }
+
+  // Hash Table One Pass - O(2n) → O(n) time and O(26) → O(1) space
+  // After valid the length iterate with index over both of strings, then
+  // increase w/s and decrease w/t the counter based on the char
+  def isAnagramHashTable(s: String, t: String): Boolean = {
+    if (s.length == t.length)
+      val counter = HashMap[Char, Int]()
+
+      for (i <- s.indices) {
+        counter(s(i)) = counter.get(s(i)).getOrElse(0) + 1
+        counter(t(i)) = counter.get(t(i)).getOrElse(0) - 1
+      }
+
+      counter.forall((_, count) => count == 0)
+    else false
+  }
 }
