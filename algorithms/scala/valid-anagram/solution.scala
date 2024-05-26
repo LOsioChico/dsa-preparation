@@ -60,15 +60,9 @@ object Solution {
     else false
   }
 
-  // Sorting - O(n * log(n)) time and O(2n) → O(n) space
-  // After valid the length, sort the strings and check if have the same
-  // elements on every position
-  def isAnagramSorting(s: String, t: String): Boolean = {
-    if (s.length == t.length)
-      val (sortedS, sortedT) = (s.sorted, t.sorted)
-      s.indices.forall(index => sortedS(index) == sortedT(index))
-    else false
-  }
+  // Sorting - O(log(n)) time and O(1) space
+  // Sort the strings and check if have the same elements
+  def isAnagramSorting(s: String, t: String): Boolean = s.sorted == t.sorted
 
   // Hash ASCII - O(2n) → O(n) time and O(26) + O(26) → O(1) space
   // After valid the length, make the hash basing on the contraint
