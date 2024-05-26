@@ -18,7 +18,7 @@
  */
 
 const containsDuplicate = (nums: number[]): boolean => {
-  return false;
+  throw new Error("Not Implemented");
 };
 
 export default containsDuplicate;
