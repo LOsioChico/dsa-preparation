@@ -36,15 +36,11 @@ object Solution {
   // Brute Force - O(n^2) time and O(1) space
   // Using nested loops to find the two nums
   def twoSumNestedLoops(nums: Array[Int], target: Int): Array[Int] = {
-    boundary[Array[Int]] {
-      for (i <- nums.indices) {
-        for (j <- Range(i + 1, nums.size)) {
+    boundary[Array[Int]]:
+      for (i <- nums.indices)
+        for (j <- Range(i + 1, nums.size))
           if (nums(i) + nums(j) == target) break(Array(i, j))
-        }
-      }
-
       Array.empty
-    }
   }
 
   // Hash Table - O(n) time and O(n) space
@@ -57,9 +53,8 @@ object Solution {
       hashTable.get(target - number) match
         case Some(_) => true
         case None    => hashTable.put(number, index); false
-    ) match {
+    ) match
       case Some(number, index) => Array(hashTable(target - number), index)
       case None                => Array.empty
-    }
   }
 }
