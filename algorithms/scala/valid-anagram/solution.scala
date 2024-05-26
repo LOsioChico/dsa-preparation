@@ -60,7 +60,7 @@ object Solution {
     else false
   }
 
-  // Sorting - O(log(n)) time and O(1) space
+  // Sorting - O(n * log(n)) time and O(1) space
   // Sort the strings and check if have the same elements
   def isAnagramSorting(s: String, t: String): Boolean = s.sorted == t.sorted
 
