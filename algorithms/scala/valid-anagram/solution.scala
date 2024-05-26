@@ -23,10 +23,10 @@ import scala.collection.mutable.HashMap
  */
 
 object Solution {
-  // Hash Table Two Pass - O(3n) → O(n) time and O(26) → O(1) space, this
+  // Hash Table Three Pass - O(3n) → O(n) time and O(26) → O(1) space, this
   // is based on constraints, s and t consist of lowercase English letters
   // Iterate every param and save it with counter of letters, then compare
-  def isAnagramHashTableTwoPass(s: String, t: String): Boolean = {
+  def isAnagramHashTableThreePass(s: String, t: String): Boolean = {
     if (s.length == t.length)
       val counterS = HashMap[Char, Int]()
       val counterT = HashMap[Char, Int]()
@@ -44,10 +44,10 @@ object Solution {
     else false
   }
 
-  // Hash Table One Pass - O(2n) → O(n) time and O(26) → O(1) space
+  // Hash Table Two Pass - O(2n) → O(n) time and O(26) → O(1) space
   // After valid the length iterate with index over both of strings, then
   // increase w/s and decrease w/t the counter based on the char
-  def isAnagramHashTable(s: String, t: String): Boolean = {
+  def isAnagramHashTableTwoPass(s: String, t: String): Boolean = {
     if (s.length == t.length)
       val counter = HashMap[Char, Int]()
 
