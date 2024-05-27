@@ -7,14 +7,26 @@ if [[ $# -eq 3 ]]; then
     language=$1
     problem=$2
     testName=$3
-elif [[ $# -eq 1 ]]; then
+elif [[ $# -eq 1 ]] || [[ $# -eq 2 ]]; then
     echo "----------------------------------------"
     command=$1
+    language=$2
     if [[ $command == "submit" ]]; then
         cd ./misc/leetcode-cli && pnpm install --silent && pnpm start
+    elif [[ $command == "clean" ]]; then
+        if [[ $language == "scala" ]]; then
+            echo "[+] Cleaning \".bsp\", \".metals\" and \".scala-build\" folders..."
+            find . -type d -name ".bsp" -exec rm -r {} +
+            find . -type d -name ".metals" -exec rm -r {} +
+            find . -type d -name ".scala-build" -exec rm -r {} +
+            echo "[+] Cleaned!"
+        else
+            echo "[!] Language not supported for the \"clean\" commmand"
+        fi
     else 
         echo "[!] Wrong use of the script, the available 1 position options are:"
         echo "- submit"
+        echo "- clean"
         echo ""
         echo "Example: ./start.sh submit"
         echo "You typed \"$command\""
