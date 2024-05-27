@@ -32,10 +32,11 @@ export function isAnagramHashTable(s: string, t: string): boolean {
   return [...counter.values()].every((count) => count === 0);
 }
 
+// Sorting - O(n * log(n)) time and O(1) space
+// Sort the strings and check if have the same elements
 export function isAnagramSorting(s: string, t: string): boolean {
   return s.split("").sort().join("") == t.split("").sort().join("");
 }
-
 
 // Hash Table Array - O(2n) → O(n) time and O(26) + O(26) → O(1) space
 // After valid the length, make the hashes basing on the contraint
