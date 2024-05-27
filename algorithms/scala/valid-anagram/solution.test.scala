@@ -12,16 +12,16 @@ class ValidAnagramSolutionTests extends AnyFunSpec {
       assert(Solution.isAnagramHashTableThreePass("anagram", "nagaram") == true)
       assert(Solution.isAnagramHashTableTwoPass("anagram", "nagaram") == true)
       assert(Solution.isAnagramSorting("anagram", "nagaram") == true)
-      assert(Solution.isAnagramHashASCII("anagram", "nagaram") == true)
-      assert(Solution.isAnagramHashASCII2("anagram", "nagaram") == true)
+      assert(Solution.isAnagramHashTableArray("anagram", "nagaram") == true)
+      assert(Solution.isAnagramHashTableArray2("anagram", "nagaram") == true)
     }
 
     it("Should return false when params are s = \"rat\", t = \"car\"") {
       assert(Solution.isAnagramHashTableThreePass("rat", "car") == false)
       assert(Solution.isAnagramHashTableTwoPass("rat", "car") == false)
       assert(Solution.isAnagramSorting("rat", "car") == false)
-      assert(Solution.isAnagramHashASCII("rat", "car") == false)
-      assert(Solution.isAnagramHashASCII2("rat", "car") == false)
+      assert(Solution.isAnagramHashTableArray("rat", "car") == false)
+      assert(Solution.isAnagramHashTableArray2("rat", "car") == false)
     }
   }
 }

@@ -64,12 +64,12 @@ object Solution {
   // Sort the strings and check if have the same elements
   def isAnagramSorting(s: String, t: String): Boolean = s.sorted == t.sorted
 
-  // Hash ASCII - O(2n) → O(n) time and O(26) + O(26) → O(1) space
+  // Hash Table Array - O(2n) → O(n) time and O(26) + O(26) → O(1) space
   // After valid the length, make the hashes basing on the contraint
   // the says, s and t consist of lowercase English letters so is 26,
   // then, this is not zero based so we need to decrease the 'a' char
   // that is the first value, then increase count based on index
-  def isAnagramHashASCII(s: String, t: String): Boolean = {
+  def isAnagramHashTableArray(s: String, t: String): Boolean = {
     if (s.length == t.length)
       val sHash = Array.fill(26)(0)
       val tHash = Array.fill(26)(0)
@@ -85,12 +85,12 @@ object Solution {
     else false
   }
 
-  // Hash ASCII - O(2n) → O(n) time and O(26) → O(1) space
+  // Hash Table Array - O(2n) → O(n) time and O(26) → O(1) space
   // After valid the length, make the hash basing on the contraint
   // the says, s and t consist of lowercase English letters so is 26,
   // then, this is not zero based so we need to decrease the 'a' char
   // that is the first value, then increase count based on index
-  def isAnagramHashASCII2(s: String, t: String): Boolean = {
+  def isAnagramHashTableArray2(s: String, t: String): Boolean = {
     if (s.length == t.length)
       val hash = Array.fill(26)(0)
 
