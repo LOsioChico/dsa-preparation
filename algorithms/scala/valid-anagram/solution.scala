@@ -32,14 +32,14 @@ object Solution {
       val counterT = HashMap[Char, Int]()
 
       for (char <- s) {
-        counterS(char) = counterS.get(char).getOrElse(0) + 1
+        counterS(char) = counterS.getOrElse(char, 0) + 1
       }
       for (char <- t) {
-        counterT(char) = counterT.get(char).getOrElse(0) + 1
+        counterT(char) = counterT.getOrElse(char, 0) + 1
       }
 
       counterS.forall((char, _) =>
-        counterS(char) == counterT.get(char).getOrElse(0)
+        counterS(char) == counterT.getOrElse(char, 0)
       )
     else false
   }
@@ -52,8 +52,8 @@ object Solution {
       val counter = HashMap[Char, Int]()
 
       for (i <- s.indices) {
-        counter(s(i)) = counter.get(s(i)).getOrElse(0) + 1
-        counter(t(i)) = counter.get(t(i)).getOrElse(0) - 1
+        counter(s(i)) = counter.getOrElse(s(i), 0) + 1
+        counter(t(i)) = counter.getOrElse(t(i), 0) - 1
       }
 
       counter.forall((_, count) => count == 0)

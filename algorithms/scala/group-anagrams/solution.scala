@@ -37,7 +37,7 @@ object Solution {
       str.foreach(char => hash(toIndex(char)) += 1)
       hashTable.update(
         hash.mkString(","),
-        hashTable.get(hash.mkString(",")).getOrElse(List()).appended(str)
+        hashTable.getOrElse(hash.mkString(","), List()).appended(str)
       )
     })
 
