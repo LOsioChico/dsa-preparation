@@ -45,7 +45,7 @@ object Solution {
     hashTable.values.toList.map(str => str.sorted)
   }
 
-  // Hash Table Sorting - O(n * m * log(m)) time andO(m * n * 26) → O(m * n) space
+  // Hash Table Sorting - O(n * m * log(m)) time and O(m * n * 26) → O(m * n) space
   // Iterate the strings, then update the hash table based on the string sorted
   def groupAnagramsHashTableSorting(strs: Array[String]): List[List[String]] = {
     val hashTable = HashMap[String, List[String]]()
