@@ -38,7 +38,7 @@ export function isAnagramSorting(s: string, t: string): boolean {
   return s.split("").sort().join("") == t.split("").sort().join("");
 }
 
-// Hash Table Array - O(2n) → O(n) time and O(26) + O(26) → O(1) space
+// Hash Table Array - O(2n) → O(n) time and O(26 * 26) → O(1) space
 // After valid the length, make the hashes basing on the contraint
 // the says, s and t consist of lowercase English letters so is 26,
 // then, this is not zero based so we need to decrease the 'a' char
