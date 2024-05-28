@@ -11,21 +11,21 @@ class GroupAnagramsSolutionTests extends AnyFunSpec {
     it(
       "Should return [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]] when params are strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]"
     ) {
-      assert(
-        (Solution.groupAnagramsHashTable(
-          Array("eat", "tea", "tan", "ate", "nat", "bat")
-        )) == List(
-          List("bat"),
-          List("nat", "tan"),
-          List("ate", "eat", "tea")
-        ) || (Solution.groupAnagramsHashTable(
-          Array("eat", "tea", "tan", "ate", "nat", "bat")
-        )) == List(
-          List("ate", "eat", "tea"),
-          List("nat", "tan"),
-          List("bat")
-        )
+      val assert1 =
+        List(List("bat"), List("nat", "tan"), List("ate", "eat", "tea"))
+      val assert2 =
+        List(List("ate", "eat", "tea"), List("nat", "tan"), List("bat"))
+      val assert3 =
+        List(List("ate", "eat", "tea"), List("bat"), List("nat", "tan"))
+      val result1 = Solution.groupAnagramsHashTable(
+        Array("eat", "tea", "tan", "ate", "nat", "bat")
       )
+      val result2 = Solution.groupAnagramsHashTableSorting(
+        Array("eat", "tea", "tan", "ate", "nat", "bat")
+      )
+
+      assert(result1 == assert1 || result1 == assert2 || result1 == assert3)
+      assert(result2 == assert1 || result2 == assert2 || result2 == assert3)
     }
 
     it("Should return [[\"\"]] when params are strs = [\"\"]") {

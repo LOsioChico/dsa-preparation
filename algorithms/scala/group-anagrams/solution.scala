@@ -25,7 +25,7 @@ import scala.collection.mutable.HashMap
  */
 
 object Solution {
-  // Hash Table - O(n * m) time and O(26) + O(n) → O(n) space
+  // Hash Table - O(n * m) time and O(m * n * 26) → O(m * n) space
   // Iterate the strings, make the hash array and update it based on the
   // char value, then update the hash table based on the hash array
   def groupAnagramsHashTable(strs: Array[String]): List[List[String]] = {
@@ -40,6 +40,22 @@ object Solution {
         hashTable.getOrElse(hash.mkString(","), List()).appended(str)
       )
     })
+
+    // The sort not should be needed but LT want this alphabetic, so
+    hashTable.values.toList.map(str => str.sorted)
+  }
+
+  // Hash Table Sorting - O(n * m * log(m)) time andO(m * n * 26) → O(m * n) space
+  // Iterate the strings, then update the hash table based on the string sorted
+  def groupAnagramsHashTableSorting(strs: Array[String]): List[List[String]] = {
+    val hashTable = HashMap[String, List[String]]()
+
+    strs.foreach(str =>
+      hashTable.update(
+        str.sorted,
+        hashTable.getOrElse(str.sorted, List()).prepended(str)
+      )
+    )
 
     // The sort not should be needed but LT want this alphabetic, so
     hashTable.values.toList.map(str => str.sorted)
