@@ -126,14 +126,20 @@ For the script to work, you need to have to need an bash shell and the following
 > [!NOTE]
 > The [!!] on the `Notes` means not recommended to submit
 
-| #   | Problem                                                                 | Tags                            | Languages                                                                     | Notes                                                                                                                                                                         |
-| --- | ----------------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| #   | Problem                                                                 | Tags                            | Languages                                                                     | Notes                                                                                                                                                                          |
+| --- | ----------------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1   | [Two Sum](https://leetcode.com/problems/two-sum/)                       | `Array` `Hash Table`            | [TypeScript](typescript/two-sum) [Scala](scala/two-sum)                       | 1. Brute force O(n^2) and O(1) space<br/>2. Hash Table O(n) time and O(n) space<br/>                                                                                           |
 | 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | `Array` `Hash Table` `Sorting`  | [TypeScript](typescript/contains-duplicate) [Scala](scala/contains-duplicate) | 1. [!!] Brute force O(n^2) and O(1) space<br/>2. Sorting O(n \* log(n)) time and O(1) space<br/>3. Hash Table O(n) time and O(n) space<br/>4. HashSet O(n) time and O(n) space |
-| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/)           | `Hash Table` `String` `Sorting` | [TypeScript](typescript/valid-anagram) [Scala](scala/valid-anagram)                                                  | 1. Hash Table (two or three pass) O(n) time and O(1) space<br/>2. Sorting O(n \* log(n)) time and O(1) space<br/>3. Hash Table Array (one or two) O(n) time and O(1) space                |
+| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/)           | `Hash Table` `String` `Sorting` | [TypeScript](typescript/valid-anagram) [Scala](scala/valid-anagram)           | 1. Hash Table (two or three pass) O(n) time and O(1) space<br/>2. Sorting O(n \* log(n)) time and O(1) space<br/>3. Hash Table Array (one or two) O(n) time and O(1) space     |
 
 <br/>
 <div align="right">
     <b><a href="#introduction">⬆️ Back to Top</a></b>
 </div>
 <br/>
+
+## Todo
+
+- Support for `./start.sh submit [language] [problem]` command
+- Add generate tests from problems based on LeetCode api
+- Fix file not found error when `./start.sh [language] [problem] [solution]` (problem not exist or not created yet)
