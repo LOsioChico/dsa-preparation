@@ -12,9 +12,19 @@ class GroupAnagramsPracticeTests extends AnyFunSpec {
       "Should return [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]] when params are strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]"
     ) {
       assert(
-        Practice.groupAnagrams(
+        (Practice.groupAnagrams(
           Array("eat", "tea", "tan", "ate", "nat", "bat")
-        ) == List(List("bat"), List("nat", "tan"), List("ate", "eat", "tea"))
+        )) == List(
+          List("bat"),
+          List("nat", "tan"),
+          List("ate", "eat", "tea")
+        ) || (Practice.groupAnagrams(
+          Array("eat", "tea", "tan", "ate", "nat", "bat")
+        )) == List(
+          List("ate", "eat", "tea"),
+          List("nat", "tan"),
+          List("bat")
+        )
       )
     }
 
@@ -24,6 +34,17 @@ class GroupAnagramsPracticeTests extends AnyFunSpec {
 
     it("Should return [[\"a\"]] when params are strs = [[\"a\"]]") {
       assert(Practice.groupAnagrams(Array("a")) == List(List("a")))
+    }
+
+    it(
+      "Should return [[\"bbbbbbbbbbc\",\"bdddddddddd\"]] when params are strs = [\"bdddddddddd\",\"bbbbbbbbbbc\"]"
+    ) {
+      assert(
+        Practice.groupAnagrams(Array("bdddddddddd", "bbbbbbbbbbc")) == List(
+          List("bbbbbbbbbbc"),
+          List("bdddddddddd")
+        )
+      )
     }
   }
 }
