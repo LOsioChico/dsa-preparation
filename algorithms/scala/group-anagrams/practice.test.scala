@@ -11,21 +11,16 @@ class GroupAnagramsPracticeTests extends AnyFunSpec {
     it(
       "Should return [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]] when params are strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]"
     ) {
-      assert(
-        (Practice.groupAnagrams(
-          Array("eat", "tea", "tan", "ate", "nat", "bat")
-        )) == List(
-          List("bat"),
-          List("nat", "tan"),
-          List("ate", "eat", "tea")
-        ) || (Practice.groupAnagrams(
-          Array("eat", "tea", "tan", "ate", "nat", "bat")
-        )) == List(
-          List("ate", "eat", "tea"),
-          List("nat", "tan"),
-          List("bat")
-        )
-      )
+      val result =
+        Practice.groupAnagrams(Array("eat", "tea", "tan", "ate", "nat", "bat"))
+      val assert1 =
+        List(List("bat"), List("nat", "tan"), List("ate", "eat", "tea"))
+      val assert2 =
+        List(List("ate", "eat", "tea"), List("nat", "tan"), List("bat"))
+      val assert3 =
+        List(List("ate", "eat", "tea"), List("bat"), List("nat", "tan"))
+
+      assert(result == assert1 || result == assert2 || result == assert3)
     }
 
     it("Should return [[\"\"]] when params are strs = [\"\"]") {
