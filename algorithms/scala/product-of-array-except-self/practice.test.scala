@@ -12,11 +12,11 @@ class ProductOfArrayExceptSelfPracticeTests extends AnyFunSpec {
       "Should return Array(24, 12, 8, 6) when params are nums = Array(1, 2, 3, 4)"
     ) {
       assert(
-        Practice.productExceptSelf(Array(24, 12, 8, 6)).toList == List(
-          1,
-          2,
-          3,
-          4
+        Practice.productExceptSelf(Array(1, 2, 3, 4)).toList == List(
+          24,
+          12,
+          8,
+          6
         )
       )
     }
