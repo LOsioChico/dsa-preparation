@@ -26,7 +26,6 @@
       "usernamehw.errorlens"
       "WakaTime.vscode-wakatime"
       "esbenp.prettier-vscode"
-      "anwar.papyrus-pdf"
     ];
 
     # Enable previews
