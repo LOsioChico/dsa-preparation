@@ -145,3 +145,4 @@ For the script to work, you need to have to need an bash shell and the following
 - Support for `./start.sh submit [language] [problem]` command
 - Add generate tests from problems based on LeetCode api
 - Fix file not found error when `./start.sh [language] [problem] [solution]` (problem not exist or not created yet)
+- Add username empty exception on LeetCode Submitions Submit
