@@ -14,7 +14,7 @@ elif [[ $# -eq 1 ]] || [[ $# -eq 2 ]]; then
     if [[ $command == "submit" ]]; then
         cd ./misc/leetcode-cli && pnpm install --silent && pnpm start
     elif [[ $command == "clean" ]]; then
-        if [[ $language == "scala" ]]; then
+        if [[ $language == "scala" || $language == "sc" ]]; then
             echo "[+] Cleaning \".bsp\", \".metals\" and \".scala-build\" folders..."
             find . -type d -name ".bsp" -exec rm -r {} +
             find . -type d -name ".metals" -exec rm -r {} +
