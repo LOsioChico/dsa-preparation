@@ -59,4 +59,21 @@ object Solution {
 
       Array.empty
   }
+
+  // Recursive Hash Table - O(n) + O(n) + O(n) → O(n) time and O(n) space
+  def twoSumRecursiveHashTable(nums: Array[Int], target: Int): Array[Int] =
+    def findPair(nums: List[(Int, Int)], seen: Map[Int, Int]): Option[(Int, Int)] =
+      nums match
+        case (num, index) :: tail => {
+          val complement = target - num
+          seen.get(complement) match {
+            case Some(complementIndex) => Some((complementIndex, index))
+            case None                  => findPair(tail, seen + (num -> index))
+          }
+        }
+        case Nil => None
+
+    findPair(nums.toList.zipWithIndex, Map.empty) match
+      case Some((index1, index2)) => Array(index1, index2)
+      case None                   => Array.empty[Int]
 }

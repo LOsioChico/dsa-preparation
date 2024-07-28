@@ -15,6 +15,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 0;
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(0, 3))
       assert(Solution.twoSumHashTable(nums, target).toList == List(0, 3))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(0, 3))
     }
 
     it(
@@ -24,6 +25,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 9;
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(0, 1))
       assert(Solution.twoSumHashTable(nums, target).toList == List(0, 1))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(0, 1))
     }
 
     it(
@@ -33,6 +35,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 9
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(1, 3))
       assert(Solution.twoSumHashTable(nums, target).toList == List(1, 3))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(1, 3))
     }
 
     it(
@@ -42,6 +45,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 9
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(2, 3))
       assert(Solution.twoSumHashTable(nums, target).toList == List(2, 3))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(2, 3))
     }
 
     it(
@@ -51,6 +55,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 24
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(0, 1))
       assert(Solution.twoSumHashTable(nums, target).toList == List(0, 1))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(0, 1))
     }
 
     it(
@@ -60,6 +65,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 15
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(0, 3))
       assert(Solution.twoSumHashTable(nums, target).toList == List(0, 3))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(0, 3))
     }
 
     it(
@@ -69,6 +75,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 6
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(0, 1))
       assert(Solution.twoSumHashTable(nums, target).toList == List(0, 1))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(0, 1))
     }
 
     it(
@@ -78,6 +85,7 @@ class TwoSumSolutionTests extends AnyFunSpec {
       val target = 11
       assert(Solution.twoSumNestedLoops(nums, target).toList == List(5, 11))
       assert(Solution.twoSumHashTable(nums, target).toList == List(5, 11))
+      assert(Solution.twoSumRecursiveHashTable(nums, target).toList == List(5, 11))
     }
   }
 }
