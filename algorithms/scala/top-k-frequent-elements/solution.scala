@@ -4,7 +4,6 @@ package topKFrequentElements
 
 import scala.collection.mutable
 import scala.util.boundary
-import scala.util.boundary.break
 
 /**
  * @tag Array; Hash Table; Divide and Conquer; Sorting; Heap (Priority Queue); Bucket Sort; Counting; Quickselect
@@ -39,7 +38,7 @@ object Solution {
     boundary[Unit]:
       for (i <- freq.length - 1 to 1 by -1)
         for (num <- freq(i)) result = result appended num
-        if (result.length == k) break()
+        if (result.length == k) boundary.break()
     result
   }
 }

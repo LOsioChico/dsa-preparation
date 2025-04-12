@@ -2,7 +2,7 @@
 
 package groupAnagrams
 
-import scala.collection.mutable.HashMap
+import scala.collection.mutable
 
 /**
  * @tag Array; Hash Table; String; Sorting
@@ -29,7 +29,7 @@ object Solution {
   // Iterate the strings, make the hash array and update it based on the
   // char value, then update the hash table based on the hash array
   def groupAnagramsHashTable(strs: Array[String]): List[List[String]] = {
-    val hashTable = HashMap[String, List[String]]()
+    val hashTable = mutable.HashMap[String, List[String]]()
     def toIndex = (char: Char) => char.toInt - 'a'.toInt
 
     strs.foreach(str => {
@@ -48,7 +48,7 @@ object Solution {
   // Hash Table Sorting - O(n * m * log(m)) time and O(m * n * 26) → O(m * n) space
   // Iterate the strings, then update the hash table based on the string sorted
   def groupAnagramsHashTableSorting(strs: Array[String]): List[List[String]] = {
-    val hashTable = HashMap[String, List[String]]()
+    val hashTable = mutable.HashMap[String, List[String]]()
 
     strs.foreach(str =>
       hashTable.update(

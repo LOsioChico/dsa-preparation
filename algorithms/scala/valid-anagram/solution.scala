@@ -2,7 +2,7 @@
 
 package validAnagram
 
-import scala.collection.mutable.HashMap
+import scala.collection.mutable
 
 /**
  * @tag Hash Table; String; Sorting
@@ -28,8 +28,8 @@ object Solution {
   // Iterate every param and save it with counter of letters, then compare
   def isAnagramHashTableThreePass(s: String, t: String): Boolean = {
     if (s.length == t.length)
-      val counterS = HashMap[Char, Int]()
-      val counterT = HashMap[Char, Int]()
+      val counterS = mutable.HashMap[Char, Int]()
+      val counterT = mutable.HashMap[Char, Int]()
 
       for (char <- s) {
         counterS(char) = counterS.getOrElse(char, 0) + 1
@@ -38,9 +38,7 @@ object Solution {
         counterT(char) = counterT.getOrElse(char, 0) + 1
       }
 
-      counterS.forall((char, _) =>
-        counterS(char) == counterT.getOrElse(char, 0)
-      )
+      counterS.forall((char, _) => counterS(char) == counterT.getOrElse(char, 0))
     else false
   }
 
@@ -49,7 +47,7 @@ object Solution {
   // increase w/s and decrease w/t the counter based on the char
   def isAnagramHashTableTwoPass(s: String, t: String): Boolean = {
     if (s.length == t.length)
-      val counter = HashMap[Char, Int]()
+      val counter = mutable.HashMap[Char, Int]()
 
       for (i <- s.indices) {
         counter(s(i)) = counter.getOrElse(s(i), 0) + 1

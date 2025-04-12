@@ -3,8 +3,7 @@
 package containsDuplicate
 
 import scala.util.boundary
-import scala.util.boundary.break
-import scala.collection.mutable.{HashMap, HashSet}
+import scala.collection.mutable
 
 /**
  * @tag Array; Hash Table; Sorting
@@ -32,7 +31,7 @@ object Solution {
     boundary[Boolean]:
       for (i <- nums.indices)
         for (j <- Range(i + 1, nums.size))
-          if (nums(i) == nums(j)) break(true)
+          if (nums(i) == nums(j)) boundary.break(true)
       false
   }
 
@@ -43,14 +42,14 @@ object Solution {
 
     boundary[Boolean]:
       for (i <- Range(1, nums.size))
-        if (nums(i - 1) == nums(i)) break(true)
+        if (nums(i - 1) == nums(i)) boundary.break(true)
       false
   }
 
 // Hash Table - O(n) time and O(n) space
 // Iterate and get on the hash map if not exist add it
   def containsDuplicateHashTable(nums: Array[Int]): Boolean = {
-    val seen = HashMap[Int, Boolean]()
+    val seen = mutable.HashMap[Int, Boolean]()
 
     nums.find(number =>
       seen.get(number) match
@@ -62,7 +61,7 @@ object Solution {
 // Hash Set - O(n) time and O(n) space
 // Iterate and check if was exists or was added on the set
   def containsDuplicateHashSet(nums: Array[Int]): Boolean = {
-    val seen = HashSet[Int]()
+    val seen = mutable.HashSet[Int]()
     nums.find(number => !seen.add(number)) != None
   }
 }

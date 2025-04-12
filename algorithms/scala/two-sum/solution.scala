@@ -3,8 +3,7 @@
 package twoSum
 
 import scala.util.boundary
-import scala.util.boundary.break
-import scala.collection.mutable.HashMap
+import scala.collection.mutable
 
 /**
   * @tag Array; Hash Table
@@ -39,7 +38,7 @@ object Solution {
     boundary[Array[Int]]:
       for (i <- nums.indices)
         for (j <- Range(i + 1, nums.size))
-          if (nums(i) + nums(j) == target) break(Array(i, j))
+          if (nums(i) + nums(j) == target) boundary.break(Array(i, j))
       Array.empty
   }
 
@@ -47,14 +46,14 @@ object Solution {
   // Iterate and get the remaining value using the current number and the target value,
   // if exist save it with the index
   def twoSumHashTable(nums: Array[Int], target: Int): Array[Int] = {
-    val hashTable = new HashMap[Int, Int]()
+    val hashTable = new mutable.HashMap[Int, Int]()
 
     boundary[Array[Int]]:
       for ((num, index) <- nums.zipWithIndex)
         val remaining = target - num
 
         if (hashTable.contains(remaining))
-          break(Array(hashTable(remaining), index))
+          boundary.break(Array(hashTable(remaining), index))
         else hashTable.addOne(num, index)
 
       Array.empty
